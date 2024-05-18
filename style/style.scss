@@ -1,4 +1,7 @@
 @import
-    'normalize';
+    'normalize',
+    'global',
+    'fonts',
+    'variables';
 
-@import 'test';
+    @import 'blocks/test';
