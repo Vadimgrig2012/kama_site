@@ -5,8 +5,7 @@
 *,
 *::before,
 *::after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /**
@@ -140,7 +139,6 @@ svg *[stroke] {
   Чиним баг задержки смены цвета при взаимодействии с svg-элементами
  */
 svg * {
-  -webkit-transition-property: fill, stroke;
   transition-property: fill, stroke;
 }
 
@@ -150,4 +148,6 @@ svg * {
  */
 body {
   background: #000;
-}
+  font-size: 16px;
+  border-radius: 1px;
+}/*# sourceMappingURL=style.css.map */
