@@ -1,7 +1,12 @@
 @import
     'normalize',
-    'global',
+    'globals',
     'fonts',
-    'variables';
+    'variables',
+    'media',
+    'mixins',
+    'utils';
+
+
 
     @import 'blocks/test';
