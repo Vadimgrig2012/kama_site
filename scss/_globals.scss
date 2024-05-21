@@ -1,0 +1,12 @@
+html {
+    font-size: calc(100vw / 1903 * 10);
+}
+
+body {
+    background-color: var(--color-main-bg);
+}
+
+.main-wrapper {
+    overflow: hidden;
+    position: relative;
+}

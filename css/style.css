@@ -146,6 +146,19 @@ svg * {
   Удаляем все анимации и переходы для людей,
   которые предпочитают их не использовать
  */
+html {
+  font-size: 0.5254860746vw;
+}
+
+body {
+  background-color: var(--color-main-bg);
+}
+
+.main-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
 @font-face {
   font-family: "Comfortaa";
   src: url("../fonts/Comfortaa-Regular.woff2") format("woff2");
@@ -170,20 +183,40 @@ svg * {
 :root {
   --color-main-bg: #4E82A6;
   --color-h1: #6B426E;
-  --color-text: #FACEE4;
+  --color-title: #FACEE4;
   --color-card-text: #8A508F;
   --color-accent-yellow: #FFEF66;
-  --border-radius-right-card: border-radius: 30px 0px 0px 30px;
-  --border-radius-left-card: border-radius: 0px 30px 30px 0px;
-  --border-radius-all: border-radius: 30px;
+  --border-radius: border-radius: 30px;
   --font-family-h1: "Comfortaa", sans-serif;
   --font-family-base: "Montserrat Alternates", sans-serif;
-  --container-pading-x-mobile: 2rem;
+  --container-pading-x: 2rem;
+  --container-pading-x-mob: 1rem;
 }
 
-body {
-  background: #000;
-  font-size: 16px;
-  border-radius: 1px;
-  margin-top: 16px;
+@media (max-width: 1024px) {
+  html {
+    font-size: 1.3020833333vw;
+  }
+}
+@media (max-width: 767px) {
+  html {
+    font-size: 2vw;
+  }
+}
+@media (max-width: 499px) {
+  html {
+    font-size: 3.125vw;
+  }
+}
+
+.bg-img-wrapper {
+  width: 90.6rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.block {
+  width: 100%;
+  height: 100vh;
 }/*# sourceMappingURL=style.css.map */
