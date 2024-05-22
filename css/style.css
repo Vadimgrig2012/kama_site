@@ -159,18 +159,18 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #d4d9e9;
+  background: #e0e2e9;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.2) inset;
 }
 
 ::-webkit-scrollbar-thumb {
   background: #FF949A;
   border-radius: 8px;
-  border: 3px solid #d4d9e9;
+  border: 3px solid #e0e2e9;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #a66367;
+  background: #d49a9e;
 }
 
 .main-wrapper {
