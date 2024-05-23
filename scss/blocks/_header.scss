@@ -6,7 +6,6 @@
     overflow: hidden;
     height: 101rem;
 
-    // .header__background-img
 
     &__background-img {
         position: absolute;
@@ -14,7 +13,6 @@
         z-index: -1;
     }
 
-    // .header__title
 
     &__title {
         font-family: 'Comfortaa';
@@ -26,19 +24,30 @@
         cursor: default;
     }
 
-    // .header__bg-circle
 
     &__bg-circle {
+        position: absolute;
+        border-radius: 50%;
     }
 
-    // .header__bg-circle-transparent
 
     &__bg-circle-transparent {
+        width: 90.8rem;
+        height: 90.8rem;
+        background: linear-gradient(45.45deg, rgb(237, 152, 152) 27.354%,rgba(196, 196, 196, 0) 100%);
+        z-index: -1;
+        left: -25rem;
+        bottom: -30rem;
     }
 
-    // .header__bg-circle-blue
 
     &__bg-circle-blue {
+        width: 61.6rem;
+        height: 61.6rem;
+        background-color: var(--color-main-bg);
+        z-index: -1;
+        left: 19.3rem;
+        bottom: -45.1rem;
     }
 }
 
@@ -48,7 +57,6 @@
     margin: 2rem 0 0 15rem;
     align-items: center;
     
-    // .menu__button
 
     &__button {
         @include reset-button;
@@ -104,8 +112,6 @@
 
 .logo {
     
-    // .logo__icon
-
     &__icon {
         width: 7.5rem;
     }
@@ -115,24 +121,21 @@
 .interactive-block {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     margin-left: 15rem;
     margin-top: 12.4rem;
-    // .interactive-block__shapes
 
 
     &__shapes {
         position: relative;
     }
 
-    // .interactive-block__rect
 
     &__rect {
         position: absolute;
         top: -8rem;
     }
 
-    // .interactive-block__triangle
 
     &__triangle {
         position: absolute;
@@ -140,11 +143,45 @@
         left: 25rem;
     }
 
-    // .interactive-block__star
 
     &__star {
         position: absolute;
-        top: 5rem;
+        top: 3rem;
         left: 25rem;
     }
+
+
+
+
+    &__btn {
+        width: 15rem;
+        height: 15rem;
+        margin-left: 66rem;
+        border-radius: 50%;
+        background-color: var(--color-main-bg);
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(126.87deg, rgb(136, 169, 192) 16.497%,rgb(78, 130, 166) 84.24%);
+
+        &:active {
+            transform: translateY(0.5rem);
+            transition: 0.1s linear;
+        }
+
+    }
+
+
+    &__btn-icon {
+        @include abs-center;
+    }
+
+
+    &__btn-text {
+        position: absolute;
+        top: 50%;
+        left: -50%;
+        translate: -50% -50%;
+        text-align: center;
+    }
+
 }
