@@ -1,30 +1,41 @@
-.background__img-wrapper {
-    width: 90.6rem;
-    position: absolute;
-    right: 0;
-    top: 0;
-}
+.background {
 
+    &__img-wrapper {
+        width: 90.6rem;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
 
-.background__circle {
-    position: absolute;
-    border-radius: 50%;
+    &__ball-composition {
+        position: absolute;
+        top: 83.1rem;
+        right: 0rem;
+        z-index: 1;
+    }
 
-    &.background__circle-orange {
+    &__circle {
+        position: absolute;
+        border-radius: 50%;
+    }
+
+    &__circle-orange {
         width: 11.6rem;
         height: 11.6rem;
         top: -3.7rem;
         right: 38.8rem;
         background: linear-gradient(220.97deg, rgb(254, 208, 121) 10.518%,rgb(207, 101, 73) 117.331%);
     }
-    &.background__circle-blue {
+
+    &__circle-blue {
         width: 24.1rem;
         height: 24.1rem;
         top: 16rem;
         right: 28.3rem;
         background: linear-gradient(141.15deg, rgb(154, 200, 242) 15.571%,rgb(62, 96, 128) 81.15%);
     }
-    &.background__circle-light-blue {
+
+    &__circle-light-blue {
         width: 23rem;
         height: 23rem;
         top: 4.5rem;
@@ -33,18 +44,165 @@
         box-shadow: -15px 15px 36px 0px rgba(21, 21, 77, 0.25);
         background: linear-gradient(140.71deg, rgb(132, 183, 206) 29.759%,rgb(99, 140, 159) 50%);
     }
-    &.background__circle-orange-dark {
+
+    &__circle-orange-dark {
         width: 23rem;
         height: 23rem;
         top: 12.2rem;
         right: -2.5rem;
         background: linear-gradient(142.52deg, rgb(255, 166, 0) 35.139%,rgb(207, 101, 73) 61.962%);
     }
-    &.background__circle-cyan-light-small{
+
+    &__circle-cyan-light-small {
         width: 6rem;
         height: 6rem;
         top: 32.5rem;
         right: 61.2rem;
+        background: linear-gradient(142.52deg, rgb(140, 223, 194) 35.139%,rgb(52, 201, 189) 61.143%);
+    }
+
+    &__circle-purple {
+        width: 13.6rem;
+        height: 13.6rem;
+        top: 27rem;
+        right: 42rem;
+        background: linear-gradient(136.43deg, rgb(95, 55, 98) 9.256%,rgb(139, 72, 143) 89.097%);
+    }
+    
+    &__circle-purple-transparent {
+        width: 19.5rem;
+        height: 19.5rem;
+        top: 25rem;
+        right: 20.8rem;
+        background: linear-gradient(143.13deg, rgba(255, 99, 97, 0.7) 12.58%,rgba(60, 45, 117, 0.7) 84.026%);
+    }
+    
+    &__circle-cyan-dark {
+        width: 9.2rem;
+        height: 9.2rem;
+        top: 57.8rem;
+        right: 66.2rem;
+        background: linear-gradient(152.08deg, rgb(59, 190, 190) 6.335%,rgb(78, 140, 136) 89.938%);
+    }
+
+    &__circle-orange-small {
+        width: 5.2rem;
+        height: 5.2rem;
+        top: 52.2rem;
+        right: 52.5rem;
+        background: linear-gradient(220.97deg, rgb(254, 208, 121) 10.518%,rgb(207, 101, 73) 117.331%);
+    }
+
+    &__circle-orange-copy {
+        width: 11.6rem;
+        height: 11.6rem;
+        top: 53.5rem;
+        right: 24.3rem;
+        background: linear-gradient(220.97deg, rgb(254, 208, 121) 10.518%,rgb(207, 101, 73) 117.331%);
+    }
+
+    &__circle-red{
+        width: 9.2rem;
+        height: 9.2rem;
+        top: 44.5rem;
+        right: 13.9rem;
+        background: linear-gradient(142.52deg, rgb(190, 74, 59) 35.139%,rgb(207, 101, 73) 61.962%);
+    }
+
+    &__circle-purple-small {
+        width: 9.2rem;
+        height: 9.2rem;
+        top: 61.2rem;
+        right: 11.6rem;
+        background: linear-gradient(136.43deg, rgb(95, 55, 98) 9.256%,rgb(139, 72, 143) 89.097%);
+    }
+
+    &__circle-cyan-light-big {
+        width: 13rem;
+        height: 13rem;
+        top: 50rem;
+        right: 0rem;
+        background: linear-gradient(142.52deg, rgb(140, 223, 194) 35.139%,rgb(52, 201, 189) 61.143%);
+    }
+
+    &__circle-purple-big {
+        width: 29.2rem;
+        height: 29.2rem;
+        top: 62.9rem;
+        right: 31.4rem;
+        background: linear-gradient(136.43deg, rgb(95, 55, 98) 9.256%,rgb(139, 72, 143) 89.097%);
+    }
+
+    &__circle-cyan-dark-copy {
+        width: 9.2rem;
+        height: 9.2rem;
+        top: 91.8rem;
+        right: 69.2rem;
+        background: linear-gradient(152.08deg, rgb(59, 190, 190) 6.335%,rgb(78, 140, 136) 89.938%);
+    }
+    
+    &__circle-blue-small {
+        width: 9.2rem;
+        height: 9.2rem;
+        top: 86.2rem;
+        right: 9.3rem;
+        background: linear-gradient(141.15deg, rgb(154, 200, 242) 15.571%,rgb(62, 96, 128) 81.15%);
+    }
+
+    &__circle-cyan-dark-copy2 {
+        width: 9.2rem;
+        height: 9.2rem;
+        top: 126.6rem;
+        right: 75.1rem;
+        background: linear-gradient(152.08deg, rgb(59, 190, 190) 6.335%,rgb(78, 140, 136) 89.938%);
+    }
+
+    &__circle-dark-green {
+        width: 29.2rem;
+        height: 29.2rem;
+        top: 139rem;
+        right: 62.5rem;
+        box-shadow: -15px 15px 74px 0px rgba(42, 44, 63, 0.25);
+        background: linear-gradient(136.43deg, rgb(55, 89, 98) 9.256%,rgb(72, 119, 143) 89.097%);
+    }
+
+    &__circle-yellow {
+        width: 23rem;
+        height: 23rem;
+        top: 148.7rem;
+        right: 32.2rem;
+        background: linear-gradient(142.52deg, rgb(254, 229, 26) 35.139%,rgb(195, 165, 70) 61.757%);
+    }
+
+    &__circle-light-blue-copy {
+        width: 23rem;
+        height: 23rem;
+        top: 153.1rem;
+        right: 0.5rem;
+        background: linear-gradient(-47.49deg, rgb(132, 183, 206) 43.152%,rgb(99, 140, 159) 78.022%);
+    }
+
+    &__circle-blue-small-copy {
+        width: 9.2rem;
+        height: 9.2rem;
+        top: 194.4rem;
+        right: 76.1rem;
+        background: linear-gradient(141.15deg, rgb(154, 200, 242) 15.571%,rgb(62, 96, 128) 81.15%);
+    }
+
+    &__circle-yellow-small {
+        width: 9.6rem;
+        height: 9.6rem;
+        top: 179.2rem;
+        right: 55.6rem;
+        background: linear-gradient(142.52deg, rgb(254, 229, 26) 35.139%,rgb(195, 165, 70) 61.757%);
+    }
+
+    &__circle-cyan-light-big-copy {
+        width: 13rem;
+        height: 13rem;
+        top: 186rem;
+        right: 20.8rem;
         background: linear-gradient(142.52deg, rgb(140, 223, 194) 35.139%,rgb(52, 201, 189) 61.143%);
     }
 }
