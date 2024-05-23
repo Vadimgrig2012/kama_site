@@ -261,6 +261,13 @@ body {
   right: -2.5rem;
   background: linear-gradient(142.52deg, rgb(255, 166, 0) 35.139%, rgb(207, 101, 73) 61.962%);
 }
+.background__circle.background__circle-cyan-light-small {
+  width: 6rem;
+  height: 6rem;
+  top: 32.5rem;
+  right: 61.2rem;
+  background: linear-gradient(142.52deg, rgb(140, 223, 194) 35.139%, rgb(52, 201, 189) 61.143%);
+}
 
 .block {
   width: 100%;
