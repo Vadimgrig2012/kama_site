@@ -401,11 +401,6 @@ body {
   background: linear-gradient(142.52deg, rgb(140, 223, 194) 35.139%, rgb(52, 201, 189) 61.143%);
 }
 
-.block {
-  width: 100%;
-  height: 300vh;
-}
-
 .header {
   display: flex;
   align-items: start;
