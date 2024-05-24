@@ -411,7 +411,6 @@ body {
 }
 .header__background-img {
   position: absolute;
-  width: 139.6rem;
   z-index: -1;
 }
 .header__title {
