@@ -8,9 +8,6 @@ function resizeSVG() {
     svg.setAttribute('width', '7.6rem');
     svg.setAttribute('height', '6.8rem');
   }
-
-  window.addEventListener('load', resizeSVG);
-  window.addEventListener('resize', resizeSVG);
 }
 
 export default resizeSVG;
