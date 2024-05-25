@@ -241,6 +241,11 @@ body {
        object-fit: contain;
   }
 }
+@media (max-width: 767px) {
+  .background__img-wrapper-adaptive {
+    top: 26.8rem;
+  }
+}
 .background__ball-composition {
   position: absolute;
   top: 83.1rem;
@@ -589,6 +594,12 @@ body {
     display: block;
   }
 }
+@media (max-width: 767px) {
+  .header .main-svg-adaptive {
+    width: 32rem;
+    height: 32rem;
+  }
+}
 .header__title {
   font-family: "Comfortaa";
   font-size: 10rem;
@@ -614,6 +625,16 @@ body {
     content: "";
   }
 }
+@media (max-width: 767px) {
+  .header__title {
+    font-size: 3.5rem;
+    margin: 1rem 0 0 0;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .header__bg-circle {
   position: absolute;
   border-radius: 50%;
@@ -635,6 +656,14 @@ body {
     right: -15rem;
     top: -10rem;
     rotate: -164.67deg;
+  }
+}
+@media (max-width: 767px) {
+  .header__bg-circle-transparent {
+    width: 17.6rem;
+    height: 17.6rem;
+    right: -5.5rem;
+    top: -3.7rem;
   }
 }
 .header__bg-circle-blue {
@@ -660,6 +689,11 @@ body {
   .menu {
     margin: 3rem 0 0 0;
     position: relative;
+  }
+}
+@media (max-width: 767px) {
+  .menu {
+    margin: 1rem 0 0 0;
   }
 }
 .menu__button {
@@ -729,9 +763,20 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 4rem;
-    height: 0.3rem;
+    height: 0.2rem;
     background-color: var(--color-main-bg);
     box-shadow: 0 -1rem 0 var(--color-main-bg), 0 1rem 0 var(--color-main-bg);
+  }
+}
+@media (max-width: 1024px) and (max-width: 767px) {
+  .menu__button::after {
+    width: 2.5rem;
+    box-shadow: 0 -0.7rem 0 var(--color-main-bg), 0 0.7rem 0 var(--color-main-bg);
+  }
+}
+@media (max-width: 1024px) and (max-width: 767px) {
+  .menu__button {
+    padding: 2rem 3.1rem;
   }
 }
 
@@ -741,6 +786,11 @@ body {
 @media (max-width: 1024px) {
   .logo {
     margin-left: 4rem;
+  }
+}
+@media (max-width: 767px) {
+  .logo {
+    margin-left: 0rem;
   }
 }
 
@@ -801,6 +851,14 @@ body {
     height: 14rem;
   }
 }
+@media (max-width: 767px) {
+  .interactive-block__btn {
+    margin-right: 20rem;
+    margin-top: 0.8rem;
+    width: 5.2rem;
+    height: 5.2rem;
+  }
+}
 .interactive-block__btn-icon {
   position: absolute;
   top: 50%;
@@ -813,6 +871,12 @@ body {
     height: 8rem;
   }
 }
+@media (max-width: 767px) {
+  .interactive-block__btn-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+}
 .interactive-block__btn-text {
   position: absolute;
   top: 50%;
@@ -820,12 +884,23 @@ body {
   translate: -50% -50%;
   text-align: center;
 }
+@media (max-width: 1024px) {
+  .interactive-block__btn-text {
+    display: none;
+  }
+}
 
 .kuromi {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 53%;
+}
+@media (max-width: 1024px) {
+  .kuromi {
+    width: 100%;
+    justify-content: center;
+  }
 }
 .kuromi__title {
   font-family: "Montserrat Alternates";
@@ -836,6 +911,12 @@ body {
   margin-top: 11.3rem;
   position: relative;
 }
+@media (max-width: 1024px) {
+  .kuromi__title {
+    margin-top: 10.8rem;
+    font-size: 5rem;
+  }
+}
 .kuromi__title::after {
   content: "";
   position: absolute;
@@ -845,10 +926,25 @@ body {
   height: 0.3rem;
   background-color: var(--color-title);
 }
+@media (max-width: 1024px) {
+  .kuromi__title::after {
+    width: 60rem;
+    left: 50%;
+    translate: -50% -50%;
+    height: 0.2rem;
+  }
+}
 .kuromi__scene {
   position: relative;
   width: 100rem;
   height: 80rem;
+}
+@media (max-width: 1024px) {
+  .kuromi__scene {
+    margin-bottom: 15rem;
+    width: 100%;
+    height: 70rem;
+  }
 }
 .kuromi__remove-watermark {
   position: absolute;

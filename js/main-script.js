@@ -1,3 +1,3 @@
-// import log from './modules/svg_header_adaptive.js';
+import resizeLogo from './modules/svg_logor_resize.js';
 
-// log();
+resizeLogo();
