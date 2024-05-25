@@ -560,6 +560,16 @@ body {
   font-size: 6rem;
   color: var(--color-title);
   margin-top: 11.3rem;
+  position: relative;
+}
+.kuromi__title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -12rem;
+  width: 82.1rem;
+  height: 0.3rem;
+  background-color: var(--color-title);
 }
 .kuromi__scene {
   position: relative;
