@@ -1,6 +1,6 @@
 const svg = document.querySelector('.logo__icon');
 
-function resizeSVG() {
+function resizeLogo() {
   if (window.innerWidth <= 767) {
     svg.setAttribute('width', '5rem');
     svg.setAttribute('height', '4.7rem');
@@ -10,6 +10,5 @@ function resizeSVG() {
   }
 }
 
-export default resizeSVG;
-
-
+window.addEventListener('load', resizeLogo);
+window.addEventListener('resize', resizeLogo);

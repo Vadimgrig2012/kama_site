@@ -883,14 +883,16 @@ body {
   left: 25rem;
 }
 .interactive-block__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 15rem;
   height: 15rem;
   margin-left: 66rem;
   border-radius: 50%;
   background-color: var(--color-main-bg);
-  position: relative;
-  overflow: hidden;
   background: linear-gradient(126.87deg, rgb(136, 169, 192) 16.497%, rgb(78, 130, 166) 84.24%);
+  position: relative;
 }
 .interactive-block__btn:active {
   transform: translateY(0.5rem);
@@ -913,12 +915,6 @@ body {
     height: 5.2rem;
   }
 }
-.interactive-block__btn-icon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
-}
 @media (max-width: 1024px) {
   .interactive-block__btn-icon {
     width: 8rem;
@@ -934,9 +930,10 @@ body {
 .interactive-block__btn-text {
   position: absolute;
   top: 50%;
-  left: -50%;
+  left: 50%;
   translate: -50% -50%;
   text-align: center;
+  cursor: default;
 }
 @media (max-width: 1024px) {
   .interactive-block__btn-text {
@@ -964,6 +961,7 @@ body {
   color: var(--color-title);
   margin-top: 11.3rem;
   position: relative;
+  cursor: default;
 }
 @media (max-width: 1024px) {
   .kuromi__title {

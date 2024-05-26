@@ -282,14 +282,16 @@
 
 
     &__btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 15rem;
         height: 15rem;
         margin-left: 66rem;
         border-radius: 50%;
         background-color: var(--color-main-bg);
-        position: relative;
-        overflow: hidden;
         background: linear-gradient(126.87deg, rgb(136, 169, 192) 16.497%,rgb(78, 130, 166) 84.24%);
+        position: relative;
 
         &:active {
             transform: translateY(0.5rem);
@@ -312,7 +314,6 @@
 
 
     &__btn-icon {
-        @include abs-center;
         @media (max-width: 1024px) {
             width: 8rem;
             height: 8rem;
@@ -325,11 +326,9 @@
 
 
     &__btn-text {
-        position: absolute;
-        top: 50%;
-        left: -50%;
-        translate: -50% -50%;
+        @include abs-center;
         text-align: center;
+        cursor: default;
         @media (max-width: 1024px) {
             display: none;
         }
