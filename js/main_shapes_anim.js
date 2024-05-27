@@ -71,14 +71,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
         duration: 1,
         x: "-15rem",
         y: "8rem",
-        scale: 0.8,
+        scale: 1,
         rotate: 720
         }, 1)
         .to(".interactive-block__star", {
         duration: 1,
         x: 0,
         y: 0,
-        scale: 1,
+        scale: 1.2,
         rotate: 1080
         }, 2);
     });

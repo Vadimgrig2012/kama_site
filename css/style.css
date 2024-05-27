@@ -937,6 +937,7 @@ body {
   display: none;
   opacity: 0;
   width: 0;
+  scale: 0;
   cursor: default;
 }
 @media (max-width: 1024px) {

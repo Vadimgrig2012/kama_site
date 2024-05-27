@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     });
                     gsap.to(txtBtn, {
                         width: 'auto',
+                        scale: 1,
                         display: 'block',
                         opacity: 1,
                         duration: 0.3,
@@ -68,6 +69,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     });
                     gsap.to(txtBtn, {
                         width: 0,
+                        scale: 0,
                         display: 'none',
                         opacity: 0,
                         x: 0, // Reset horizontal position
