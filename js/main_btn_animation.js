@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", (event) => {
 
     let mm = gsap.matchMedia();
-
     mm.add("(min-width: 1025px)", () => {
 
         // Select the button element from the document
@@ -24,6 +23,20 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
             // Use GSAP (GreenSock Animation Platform) to animate the button
             gsap.to(button, {
+                onStart: () => {
+                    gsap.to(iconBtn, {
+                        opacity: 0,
+                        width: 0,
+                        display: 'none',
+                        duration: 0.1,
+                    });
+                    gsap.to(txtBtn, {
+                        width: 'auto',
+                        display: 'block',
+                        opacity: 1,
+                        duration: 0.3,
+                    });
+                },
                 scale: 1.5,
                 x: mousePosX * 2, // Move horizontally towards mouse
                 y: mousePosY * 2, // Move vertically towards mouse
@@ -32,7 +45,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             });
             gsap.to(txtBtn,{
                 x: mousePosX * 0.5, // Move horizontally towards mouse
-                y: mousePosY * 0.4, // Move vertically towards mouse
+                y: mousePosY * 0.35, // Move vertically towards mouse
                 rotationY: yDisplacement,
                 rotationZ: zDisplacement,
                 duration: 0.5, // Duration of the animation
@@ -42,22 +55,31 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
         // Add an event listener for when the mouse leaves the button area
         button.addEventListener('mouseleave', () => {
-            // Animate the button back to its original position and size
             gsap.to(button, {
+                onStart: () => {
+                    gsap.to(iconBtn, {
+                        opacity: 1,
+                        width: 'auto',
+                        display: 'block',
+                        duration: 0.3,
+                        delay: 0.3,
+                    });
+                    gsap.to(txtBtn, {
+                        width: 0,
+                        display: 'none',
+                        opacity: 0,
+                        x: 0, // Reset horizontal position
+                        y: 0, // Reset vertical position
+                        rotationY: 0,
+                        rotationZ: 0,
+                        duration: 0.3,
+                    });
+                },
                 x: 0, // Reset horizontal position
                 y: 0, // Reset vertical position
                 scale: 1, // Reset scale
                 duration: 1, // Duration of the animation
                 ease: 'elastic.out(1,0.3)' // Easing function for a 'springy' return
-            });
-            gsap.to(txtBtn, {
-                x: 0, // Reset horizontal position
-                y: 0, // Reset vertical position
-                scale: 1, // Reset scale
-                rotationY: 0,
-                rotationZ: 0,
-                duration: 1, // Duration of the animation
-                ease: 'elastic.out(1,0.3)' 
             });
         });
     });
