@@ -110,10 +110,10 @@
  /**
    Плавный скролл
   */
- html,
- :has(:target) {
-   scroll-behavior: smooth;
- }
+//  html,
+//  :has(:target) {
+//    scroll-behavior: smooth;
+//  }
  
  body {
    /**

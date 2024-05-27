@@ -23,12 +23,24 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     ease: 'power2.inOut' // Используем другую функцию плавности
                 });
             },
-        });
-
-        tl.to('.background__img-wrapper-adaptive', {
-            y: "1rem",
-        });
+        })
     });
-
-
 })
+
+
+// document.addEventListener("DOMContentLoaded", (event) => {
+//     gsap.registerPlugin(ScrollTrigger)
+    
+//     gsap.from('.background__circle', {
+//         scrollTrigger: {
+//             trigger: '.background__img-wrapper img',
+//             markers: true,
+//             start: 'top bottom',
+//             scrub: true
+//         },
+//         duration: 2,
+//         stagger: 0.1,
+//         y: "20rem"
+//     })
+
+// });
