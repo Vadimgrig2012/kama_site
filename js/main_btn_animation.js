@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 onStart: () => {
                     gsap.to(iconBtn, {
                         opacity: 0,
+                        scale: 0,
                         width: 0,
                         display: 'none',
                         duration: 0.1,
@@ -58,6 +59,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             gsap.to(button, {
                 onStart: () => {
                     gsap.to(iconBtn, {
+                        scale: 1,
                         opacity: 1,
                         width: 'auto',
                         display: 'block',
