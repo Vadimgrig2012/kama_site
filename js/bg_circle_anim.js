@@ -20,8 +20,8 @@ circles.forEach(circle => {
         onReverseComplete: () => {
             gsap.to(circle, {
                 duration: 0.1,
-                y: 0, // Возвращаем элемент в исходное положение
-                ease: 'power2.inOut' // Используем другую функцию плавности
+                y: 0,
+                ease: 'power2.inOut'
             });
         },
     })

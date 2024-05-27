@@ -5,8 +5,8 @@ let mm = gsap.matchMedia();
 mm.add("(min-width: 1025px)", () => {
 
     let tl = gsap.timeline({
-    repeat: -1, // Повторяем анимацию бесконечно
-    repeatDelay: 1 // Задержка 1 секунда между циклами
+    repeat: -1,
+    repeatDelay: 1 
     });
 
     function restartAnimation() {
@@ -34,7 +34,7 @@ mm.add("(min-width: 1025px)", () => {
     y: 0,
     scale: 1,
     rotate: 1080,
-    onComplete: restartAnimation // После завершения анимации вызываем функцию restartAnimation
+    onComplete: restartAnimation
     });
 
 
