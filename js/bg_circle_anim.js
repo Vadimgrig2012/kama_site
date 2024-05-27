@@ -1,46 +1,25 @@
 import { gsap } from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+// gsap.registerPlugin(ScrollTrigger)
 
-const circles = gsap.utils.toArray('.background__circle');
+// Получаем все элементы с классом "background__circle"
+const circles = document.querySelectorAll('.background__circle');
 
+// Создаем функцию для анимации каждого шара
+function animateCircle(circle) {
+  // Создаем timeline для анимации
+  const tl = gsap.timeline({ repeat: -1, yoyo: true });
+
+  // Добавляем анимацию для каждого шара
+  tl.to(circle, {
+    duration: 3,
+    y: '+=3rem',
+    ease: 'sine.inOut',
+    delay: Math.random() * 1
+  });
+}
+
+// Применяем анимацию к каждому шару
 circles.forEach(circle => {
-    const tl = gsap.timeline({
-        repeat: -1,
-        yoyo: true,
-        ease: 'power4.inOut',
-        delay: Math.random() * 4
-    });
-
-    tl.to(circle, {
-        duration: 2.5,
-        y: "1rem",
-        delay: 0.3,
-        onComplete: () => {
-        circle.style.willChange = 'transform';
-        },
-        onReverseComplete: () => {
-            gsap.to(circle, {
-                duration: 0.1,
-                y: 0,
-                ease: 'power2.inOut'
-            });
-        },
-    })
+  animateCircle(circle);
 });
-
-
-
-
-//     gsap.registerPlugin(ScrollTrigger)
-    
-//     gsap.from('.background__circle', {
-//         scrollTrigger: {
-//             trigger: '.background__img-wrapper img',
-//             markers: true,
-//             start: 'top bottom',
-//             scrub: true
-//         },
-//         duration: 2,
-//         stagger: 0.1,
-//         y: "20rem"
-//     })
-
