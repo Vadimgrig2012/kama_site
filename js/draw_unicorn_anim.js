@@ -1,3 +1,5 @@
+// import { gsap } from "gsap";
+
 // const svgPath = document.getElementById('Unicorn');
 // const animateBtn = document.getElementById('animate-btn'); 
 
