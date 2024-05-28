@@ -61,6 +61,7 @@ mm.add("(min-width: 1025px)", () => {
                     display: 'block',
                     duration: 0.3,
                     delay: 0.3,
+                    ease: 'elastic.out(1,0.3)'
                 });
                 gsap.to(txtBtn, {
                     width: 0,
