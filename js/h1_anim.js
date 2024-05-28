@@ -1,16 +1,27 @@
 import { gsap } from "gsap";
 
-const tl = gsap.timeline({ repeat: -1, repeatDelay: 3.5 });
-const tl2 = gsap.timeline({ repeat: -1, repeatDelay: 2.7 });
+const tl = gsap.timeline({ repeat: -1, repeatDelay: 2.7 });
 
-tl.to('.h1_anim_c', {
+gsap.to('.h1_anim_c', {
     rotateZ: 1080,
     duration: 3,
     ease: 'elastic.inOut',
+    repeat: -1,
+    repeatDelay: 3.5
 })
 
 
-tl2.to('.h1_anim_l', {
+gsap.to('.h1_anim_i', {
+    rotateX: 360,
+    duration: 4,
+    ease: 'elastic.out(1,0.3)',
+    transformOrigin: "50% 75%",
+    repeat: -1,
+    repeatDelay: 2
+})
+
+
+tl.to('.h1_anim_l', {
     y: "-6rem",
     ease: "elastic.out(1,0.3)",
     duration: 0.4,
@@ -20,7 +31,7 @@ tl2.to('.h1_anim_l', {
     scale: 1,
     opacity: 1,
     duration: 0.5,
-    ease: 'power4.out',
+    ease: 'elastic.out(1,0.3)',
 })
 .to('.h1_anim_l', {
     rotateZ: 1080,
@@ -32,9 +43,10 @@ tl2.to('.h1_anim_l', {
     scale: 0,
     opacity: 0,
     duration: 0.5,
-    ease: 'power4.out',
+    ease: 'elastic.in(1,0.3)',
 })
 .to('.h1_anim_l', {
+    delay: 0.4,
     y: "0rem",
     ease: "elastic.out(1,0.3)",
     duration: 0.4,
