@@ -5,25 +5,25 @@ import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 gsap.registerPlugin(ScrollTrigger,MotionPathPlugin);
 
 
-const pathElement = document.getElementById("pathway");
+const pathElement = document.getElementById("pathway2");
 
-const ballPurple = document.getElementById("ball-purple")
+const ballPurple = document.getElementById("ball-purple");
+const ballWhite2 = document.getElementById("ball-white2");
 
-// gsap.set(ballPurple, {xPercent:-50, yPercent:-50, transformOrigin: "300% 100%"})
 
 gsap.to(ballPurple, {
-    duration: 5,
     motionPath: {
         path: pathElement,
         align: pathElement,
-        autoRotate: true
+        autoRotate: false,
+        offsetX: -40,
+        offsetY: -30,
     },
     scrollTrigger: {
-        trigger: '.kuromi',
-        start: 'top 20%',
-        endTrigger: '#ball-orange-main',
-        end: 'bottom 70%',
-        scrub: 70,
-        markers: true
+        trigger: '#ball-orange-main',
+        start: '-20% center',
+        end: '120% center',
+        scrub: 5,
+        markers: true,
     }
-})
+});
