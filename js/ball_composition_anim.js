@@ -22,6 +22,8 @@ mm.add("(min-width: 1025px)", () => {
         motionPath: {
             path: pathElement1,
             align: pathElement1,
+            start: -0.1,
+            end: -0.9,
             autoRotate: false,
             offsetX: -40,
             offsetY: -30,
@@ -103,7 +105,7 @@ mm.add("(min-width: 1025px)", () => {
             trigger: '#ball-orange-main',
             start: '-20% center',
             end: '120% center',
-            scrub: 5,
+            scrub: 10,
         }
     });
 
@@ -121,7 +123,7 @@ mm.add("(min-width: 1025px)", () => {
             trigger: '#ball-orange-main',
             start: '-20% center',
             end: '120% center',
-            scrub: 5,
+            scrub: 8,
         }
     });
 });
