@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 // Получаем все элементы с классом "background__circle"
 const circles = document.querySelectorAll('.background__circle');
 const transp_circle = document.querySelector('.header__bg-circle-transparent')
+const mm = gsap.matchMedia();
 
 // Создаем функцию для анимации каждого шара
 function animateCircle(circle) {
@@ -25,19 +26,28 @@ circles.forEach(circle => {
 
 
 
-// New code
 
-const circlesContainer = document.querySelector('.background__circle-container');
 
-circlesContainer.addEventListener('mousemove', (e) => {
-  if (e.currentTarget.classList.contains('background__circle')) {
-    gsap.to(e.currentTarget, {
-      scale: 1.2
+mm.add("(min-width: 1025px)", () => {
+  circles.forEach(circle => {
+    circle.addEventListener('mousemove', () => {
+      gsap.to(circle, {
+        scale: 0.8,
+        duration: 0.2,
+        ease: 'sine.Out',
+      });
     });
-  }
-});
 
-// _______
+    circle.addEventListener('mouseleave', () => {
+      gsap.to(circle, {
+        scale: 1,
+        duration: 0.2,
+        ease: 'sine.Out',
+      });
+    });
+  });
+})
+
 
 const tl = gsap.timeline({ repeat: -1, yoyo: true });
 
