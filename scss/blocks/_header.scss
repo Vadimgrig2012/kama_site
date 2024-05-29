@@ -78,6 +78,16 @@
         left: 76rem;
         scale: 0;
         opacity: 0;
+        @media (max-width: 1024px) {
+            left: 52.7rem;
+            top: -24rem;
+            width: 9rem;
+        }
+        @media (max-width: 767px) {
+            left: 17.3rem;
+            top: -30rem;
+            width: 4.5rem;
+        }
     }
 
     // Anim H1
@@ -86,6 +96,8 @@
     .h1_anim_i {
         display: inline-block;
     }
+
+
 
 
 
