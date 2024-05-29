@@ -18,6 +18,7 @@ mm.add("(min-width: 1025px)", () => {
     duration: 1,
     x: "20rem",
     y: "5rem",
+    ease: "back.out(1.7)",
     scale: 0.4,
     rotate: 360
     })
@@ -25,6 +26,7 @@ mm.add("(min-width: 1025px)", () => {
     duration: 1,
     x: "15rem",
     y: "-10rem",
+    ease: "back.out(1.7)",
     scale: 0.7,
     rotate: 720
     })
@@ -32,6 +34,7 @@ mm.add("(min-width: 1025px)", () => {
     duration: 1,
     x: 0,
     y: 0,
+    ease: "back.out(1.7)",
     scale: 1,
     rotate: 1080,
     onComplete: restartAnimation
@@ -42,12 +45,14 @@ mm.add("(min-width: 1025px)", () => {
     duration: 1,
     x: "-20rem",
     y: "20rem",
+    ease: "back.out(1.7)",
     rotate: 360
     }, 0)
     .to(".interactive-block__triangle", {
     duration: 1,
     x: "-25rem",
     y: "8rem",
+    ease: "back.out(1.7)",
     rotate: 720,
     scale: 1.5,
     }, 1)
@@ -55,6 +60,7 @@ mm.add("(min-width: 1025px)", () => {
     duration: 1,
     x: 0,
     y: 0,
+    ease: "back.out(1.7)",
     scale: 1,
     rotate: 1080
     }, 2);
@@ -64,6 +70,7 @@ mm.add("(min-width: 1025px)", () => {
     duration: 1,
     x: "-18rem",
     y: "-15rem",
+    ease: "back.out(1.7)",
     scale: 2,
     rotate: 360
     }, 0)
@@ -71,6 +78,7 @@ mm.add("(min-width: 1025px)", () => {
     duration: 1,
     x: "-15rem",
     y: "8rem",
+    ease: "back.out(1.7)",
     scale: 1,
     rotate: 720
     }, 1)
@@ -78,97 +86,8 @@ mm.add("(min-width: 1025px)", () => {
     duration: 1,
     x: 0,
     y: 0,
+    ease: "back.out(1.7)",
     scale: 1.2,
     rotate: 1080
     }, 2);
 });
-
-
-
-// let tl = gsap.timeline({
-//     repeat: -1,
-//     repeatDelay: 0,
-//     onComplete: restartAnimation
-//     });
-
-//     function restartAnimation() {
-//     tl.restart(true);
-//     }
-
-
-//     tl.to(".interactive-block__rect", {
-//     duration: 1.3,
-//     x: "20rem",
-//     y: "5rem",
-//     scale: 0.4,
-//     ease: 'back.inOut(1.7)',
-//     rotate: 360
-//     }, 0)
-//     .to(".interactive-block__rect", {
-//     duration: 1.3,
-//     x: "15rem",
-//     y: "-10rem",
-//     scale: 0.7,
-//     ease: 'back.inOut(1.7)',
-//     rotate: 720
-//     }, 1)
-//     .to(".interactive-block__rect", {
-//     duration: 1.3,
-//     x: 0,
-//     y: 0,
-//     scale: 1,
-//     ease: 'back.inOut(1.7)',
-//     rotate: 1080,
-//     // onComplete: restartAnimation
-//     }, 2);
-
-
-//     tl.to(".interactive-block__triangle", {
-//     duration: 1.3,
-//     x: "-20rem",
-//     y: "20rem",
-//     ease: 'back.inOut(1.7)',
-//     rotate: 360
-//     }, 0)
-//     .to(".interactive-block__triangle", {
-//     duration: 1.3,
-//     x: "-25rem",
-//     y: "8rem",
-//     ease: 'back.inOut(1.7)',
-//     rotate: 720,
-//     scale: 1.5,
-//     }, 1)
-//     .to(".interactive-block__triangle", {
-//     duration: 1.3,
-//     x: 0,
-//     y: 0,
-//     ease: 'back.inOut(1.7)',
-//     scale: 1,
-//     rotate: 1080
-//     }, 2);
-
-
-//     tl.to(".interactive-block__star", {
-//     duration: 1.3,
-//     x: "-18rem",
-//     y: "-15rem",
-//     ease: 'back.inOut(1.7)',
-//     scale: 2,
-//     rotate: 360
-//     }, 0)
-//     .to(".interactive-block__star", {
-//     duration: 1.3,
-//     x: "-15rem",
-//     y: "8rem",
-//     ease: 'back.inOut(1.7)',
-//     scale: 1.2,
-//     rotate: 720
-//     }, 1)
-//     .to(".interactive-block__star", {
-//     duration: 1.3,
-//     x: 0,
-//     y: 0,
-//     ease: 'back.inOut(1.7)',
-//     scale: 1,
-//     rotate: 1080
-//     }, 2);

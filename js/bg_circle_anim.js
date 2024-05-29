@@ -1,6 +1,4 @@
 import { gsap } from "gsap";
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
-// gsap.registerPlugin(ScrollTrigger)
 
 // Получаем все элементы с классом "background__circle"
 const circles = document.querySelectorAll('.background__circle');
