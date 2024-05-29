@@ -24,6 +24,21 @@ circles.forEach(circle => {
 });
 
 
+
+// New code
+
+const circlesContainer = document.querySelector('.background__circle-container');
+
+circlesContainer.addEventListener('mousemove', (e) => {
+  if (e.currentTarget.classList.contains('background__circle')) {
+    gsap.to(e.currentTarget, {
+      scale: 1.2
+    });
+  }
+});
+
+// _______
+
 const tl = gsap.timeline({ repeat: -1, yoyo: true });
 
 tl.to(transp_circle, {
