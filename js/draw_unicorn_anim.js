@@ -12,3 +12,24 @@
 // });
 
 // Нужно добавить в конце path свойства stroke-dasharray="1000" stroke-dashoffset="1000"
+
+
+
+
+
+
+import { gsap } from "gsap";
+
+const svg = document.querySelector('.header__bg-heart');
+const path = svg.querySelector('.heart-path');
+const animation = gsap.timeline({repeat: -1, yoyo: true});
+
+animation.to(path, {
+    strokeDashoffset: 0,
+    duration: 3,
+});
+
+animation.to(path, {
+    strokeDashoffset: -1600,
+    duration: 3,
+});

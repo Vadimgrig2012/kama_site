@@ -144,6 +144,16 @@
             display: none;
         }
     }
+
+    &__bg-heart {
+        position: absolute;
+        right: 68rem;
+        bottom: 10rem;
+
+        @media (max-width: 1024px) {
+            display: none;
+        }
+    }
 }
 
 
@@ -256,6 +266,9 @@
 }
 
 
+
+
+
 .logo {
     
     &__icon {
@@ -268,6 +281,9 @@
         margin-left: 0rem;
     }
 }
+
+
+
 
 
 .interactive-block {
@@ -322,6 +338,7 @@
         background-color: var(--color-main-bg);
         background: linear-gradient(126.87deg, rgb(136, 169, 192) 16.497%,rgb(78, 130, 166) 84.24%);
         position: relative;
+        z-index: 2;
 
         &:active {
             transform: translateY(0.5rem);
