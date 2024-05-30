@@ -34,8 +34,8 @@
             width: 82.1rem;
             height: 0.3rem;
             background-color: var(--color-title);
-            // transform: scaleX(0);
-            // transform-origin: left center;
+            transform: scaleX(var(--scaleX));
+            transform-origin: var(--transformOrigin);
             @media (max-width: 1024px) {
                 width: 60rem;
                 left: 50%;
@@ -47,6 +47,10 @@
                 height: 0.1rem;
             }
         }
+    }
+
+    &__title-span {
+        display: inline-block;
     }
 
     &__scene {
