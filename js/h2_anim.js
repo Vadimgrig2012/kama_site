@@ -10,7 +10,8 @@ gsap.registerPlugin(ScrollTrigger);
 let tl = gsap.timeline({
   scrollTrigger: {
     trigger: '.kuromi__title',
-    start: "top 90%",
+    start: "top 80%",
+    // markers: true
   }
 });
 
@@ -26,4 +27,3 @@ tl.to('.kuromi__title', {
     delay: 0.1,
     stagger: 0.2
 })
-
