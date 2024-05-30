@@ -18,18 +18,18 @@
 
 
 
-import { gsap } from "gsap";
+// import { gsap } from "gsap";
 
-const svg = document.querySelector('.header__bg-heart');
-const path = svg.querySelector('.heart-path');
-const animation = gsap.timeline({repeat: -1, yoyo: true});
+// const svg = document.querySelector('.header__bg-heart');
+// const path = svg.querySelector('.heart-path');
+// const animation = gsap.timeline({repeat: -1, yoyo: true});
 
-animation.to(path, {
-    strokeDashoffset: 0,
-    duration: 3,
-});
+// animation.to(path, {
+//     strokeDashoffset: 0,
+//     duration: 3,
+// });
 
-animation.to(path, {
-    strokeDashoffset: -1600,
-    duration: 3,
-});
+// animation.to(path, {
+//     strokeDashoffset: -1600,
+//     duration: 3,
+// });

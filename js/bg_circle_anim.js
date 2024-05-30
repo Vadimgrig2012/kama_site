@@ -25,9 +25,6 @@ circles.forEach(circle => {
 });
 
 
-
-
-
 mm.add("(min-width: 1025px)", () => {
   circles.forEach(circle => {
     circle.addEventListener('mousemove', () => {
@@ -49,10 +46,27 @@ mm.add("(min-width: 1025px)", () => {
 })
 
 
-const tl = gsap.timeline({ repeat: -1, yoyo: true });
 
-tl.to(transp_circle, {
+
+
+
+
+
+gsap.to(transp_circle, {
     y: "5rem",
     duration: 6,
     ease: 'sine.inOut',
+    repeat: -1,
+    yoyo: true
+})
+
+
+mm.add("(max-width: 1024px)", () => {
+  gsap.to(transp_circle, {
+    y: "3rem",
+    duration: 6,
+    ease: 'sine.inOut',
+    repeat: -1,
+    yoyo: true
+  });
 })
