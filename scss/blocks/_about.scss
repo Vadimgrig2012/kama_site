@@ -5,9 +5,12 @@
 
 .card {
     display: flex;
-    transform: scaleX(0);
+    // transform: scaleX(0);
 }
 
+.head2 {
+    margin-top: 50rem;
+}
 
 .card-left {
     width: 81rem;
