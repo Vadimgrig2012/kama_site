@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 let tl = gsap.timeline({
   scrollTrigger: {
     trigger: '.kuromi__title',
-    start: "top 80%",
+    start: "center 80%",
     // markers: true
   }
 });
