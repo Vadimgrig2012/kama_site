@@ -1,50 +1,119 @@
-// import { gsap } from "gsap";
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-// // Регистрируем плагины
-// gsap.registerPlugin(ScrollTrigger);
+// Регистрируем плагины
+gsap.registerPlugin(ScrollTrigger);
 
-// const tl = gsap.timeline({
+
+
+let currentIndex = -1;
+let animating;
+let cards = gsap.utils.toArray(".card");
+
+let intentObserver = ScrollTrigger.observe({
+    // target: '.block-main',
+    type: "wheel,touch",
+    onUp: () => !animating && gotoCard(currentIndex + 1, true),
+    onDown: () => !animating && gotoCard(currentIndex - 1, false),
+    wheelSpeed: -1,
+    tolerance: 10,
+    preventDefault: true,
+    onPress: self => {
+      // on touch devices like iOS, if we want to prevent scrolling, we must call preventDefault() on the touchstart (Observer doesn't do that because that would also prevent side-scrolling which is undesirable in most cases)
+      ScrollTrigger.isTouch && self.event.preventDefault()
+    }
+})
+
+intentObserver.disable();
+
+
+function gotoCard(index, isScrollingDown) {
+    animating = true;
+    // return to normal scroll if we're at the end or back up to the start
+    if ((index === cards.length && isScrollingDown) || (index === -1 && !isScrollingDown)) {
+  
+          let target = index;
+          gsap.to(target, {
+          scaleX: isScrollingDown ? 0 : 1,
+          duration: 0.00,
+          onComplete: () => {
+            animating = false;
+            isScrollingDown && intentObserver.disable();
+          }
+      });
+      return
+    }
+  
+  //   target the second panel, last panel?
+    let target = isScrollingDown ? cards[index]: cards[currentIndex];
+  
+    gsap.to(target, {
+      scaleX: isScrollingDown ? 1 : 0,
+      duration: 0.75,
+      onComplete: () => {
+        animating = false;
+      }
+    });
+    currentIndex = index;
+    console.log(index);
+  
+  }
+  
+  // pin swipe section and initiate observer
+  ScrollTrigger.create({
+    trigger: ".card",
+    pin: true,
+    start: "top top",
+    end: "+=1",
+    onEnter: (self) => {
+      intentObserver.enable();
+      gotoCard(currentIndex + 1, true);    
+    },
+    onEnterBack: () => {
+      intentObserver.enable();
+      gotoCard(currentIndex - 1, false);
+    }
+  })
+
+
+
+
+
+
+
+// gsap.to(".card-left", {
+//     scaleX: 1,
 //     scrollTrigger: {
-//       trigger: '.block', // Триггер для анимации - контейнер с блоками
-//       start: 'top 50%', // Начало анимации, когда верх контейнера достигает середины viewport
-//       end: 'bottom 50%', // Конец анимации, когда низ контейнера достигает середины viewport
-//       scrub: true, // Анимация будет "подвешена" на скролле
-//       pin: true, // Контейнер будет "прикреплен" к viewport, пока идет анимация
-//       markers: true,
-//     //   onUpdate: self => { // Колбэк, вызываемый при обновлении анимации
-//     //     if (self.progress >= 0.5) { // Если анимация прошла больше половины
-//     //       document.body.style.overflow = 'hidden'; // Запрещаем скролл страницы
-//     //     } else {
-//     //       document.body.style.overflow = 'auto'; // Разрешаем скролл страницы
-//     //     }
-//     //   }
+//       trigger: ".block1",
+//       start: "top center",
+//       end: "bottom center",
+//       toggleActions: "play none none none",
+//       onEnter: () => {
+//         document.body.style.overflow = "hidden";
+//       },
+//       onLeave: () => {
+//         document.body.style.overflow = "auto";
+//       }
 //     }
 //   });
   
-//   // Добавляем анимацию в таймлайн
-//   tl.from('.card1', { // Анимация карточки 1
-//     duration: 1,
-//     // x: '-100%',
-//     scaleX: 0,
-//     ease: 'power2.inOut'
-//   })
-//   .to('.card1', { // Анимация карточки 1
-//     duration: 1,
-//     // x: '100%',
+//   // Анимация для третьего блока
+//   gsap.to(".card-right", {
 //     scaleX: 1,
-//     ease: 'power2.inOut'
-//   }, '<')
-  
-//   .from('.card2', { // Анимация карточки 2
-//     duration: 1,
-//     // x: '100%',
-//     scaleX: 1,
-//     ease: 'power2.inOut'
-//   })
-//   .to('.card2', { // Анимация карточки 2
-//     duration: 1,
-//     // x: '-100%',
-//     scaleX: 0,
-//     ease: 'power2.inOut'
-//   }, '<');
+//     scrollTrigger: {
+//       trigger: ".block2",
+//       start: "top center",
+//       end: "bottom center",
+//       toggleActions: "play none none none",
+//       onEnter: () => {
+//         document.body.style.overflow = "hidden";
+//       },
+//       onLeave: () => {
+//         document.body.style.overflow = "auto";
+//       }
+//     }
+//   });
+
+
+
+

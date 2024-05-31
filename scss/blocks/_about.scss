@@ -1,23 +1,27 @@
-.block {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 25rem;
+.block-main {
+    margin-top: 30rem;
 }
-.card1 {display: flex;
+
+
+.card {
+    display: flex;
+    transform: scaleX(0);
+}
+
+
+.card-left {
     width: 81rem;
     height: 72rem;
     margin-left: 2rem;
+    margin-right: auto;
     border-radius: 30px;
     background: linear-gradient(225.00deg, rgb(255, 249, 126),rgb(252, 164, 197) 100%);
-    // transform: scaleX(0)
 }
-.card2 {
-    display: flex;
+.card-right {
     width: 81rem;
     height: 72rem;
     margin-right: 2rem;
+    margin-left: auto;
     border-radius: 30px;
     background: linear-gradient(43.73deg, rgb(108, 231, 221) 33.127%,rgb(37, 214, 151) 78.056%);
-    // transform: scaleX(0)
 }
