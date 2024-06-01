@@ -9,18 +9,18 @@ gsap.registerPlugin(ScrollTrigger);
 
 let tl = gsap.timeline({
   scrollTrigger: {
-    trigger: '.kuromi__title',
+    trigger: '.title',
     start: "center 80%",
     // markers: true
   }
 });
 
-tl.to('.kuromi__title', {
+tl.to('.title', {
     '--scaleX': '1',
      duration: 0.5,
      ease: 'power2.out',
 })
-.from('.kuromi__title-span', { 
+.from('.title__span', { 
     y: '-10rem',
     opacity: 0, 
     ease: 'bounce.out',

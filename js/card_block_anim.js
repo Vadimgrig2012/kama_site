@@ -1,202 +1,135 @@
 // import { gsap } from "gsap";
 // import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 // // Регистрируем плагины
-// gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
+// const sections = document.querySelectorAll(".about__block");
 
-// // let lastIndex = 
-// let currentIndex = -1;
-// let animating;
-// let cards = gsap.utils.toArray(".card");
-
-// let intentObserver = ScrollTrigger.observe({
-//     target: '.block-main',
-//     type: "wheel,touch",
-//     onUp: () => !animating && gotoCard(currentIndex + 1, true),
-//     onDown: () => !animating && gotoCard(currentIndex - 1, false),
-//     wheelSpeed: -1,
-//     tolerance: 10,
-//     preventDefault: true,
-//     onPress: self => {
-//       // on touch devices like iOS, if we want to prevent scrolling, we must call preventDefault() on the touchstart (Observer doesn't do that because that would also prevent side-scrolling which is undesirable in most cases)
-//       ScrollTrigger.isTouch && self.event.preventDefault()
-//     }
-// })
-
-// intentObserver.disable();
-
-
-// function gotoCard(index, isScrollingDown) {
-//     animating = true;
-//     // return to normal scroll if we're at the end or back up to the start
-//     if ((index === cards.length && isScrollingDown) || (index === -1 && !isScrollingDown)) {
-  
-//           let target = index;
-//           gsap.to(target, {
-//           scaleX: isScrollingDown ? 0 : 1,
-//           duration: 0.00,
-//           onComplete: () => {
-//             animating = false;
-//             isScrollingDown && intentObserver.disable();
-//           }
-//       });
-//       return
-//     }
-  
-//   //   target the second panel, last panel?
-//     let target = isScrollingDown ? cards[index]: cards[currentIndex];
-  
-//     gsap.to(target, {
-//       scaleX: isScrollingDown ? 1 : 0,
-//       duration: 0.75,
-//       onComplete: () => {
-//         animating = false;
+// // this scrolling object just allows us to conveniently call scrolling.enable(), scrolling.disable(), and check if scrolling.enabled is true. 
+// // some browsers (like iOS Safari) handle scrolling on a separate thread and can cause things to get out of sync (jitter/jumpy), so when we're animating the scroll position, force an update of GSAP tweens when there's a scroll event in order to maintain synchronization)
+// const scrolling = {
+//     enabled: true,
+//     events: "scroll,wheel,touchmove,pointermove".split(","),
+//     prevent: e => e.preventDefault(),
+//     disable() {
+//       if (scrolling.enabled) {
+//         scrolling.enabled = false;
+//         window.addEventListener("scroll", gsap.ticker.tick, {passive: true});
+//         scrolling.events.forEach((e, i) => (i ? document : window).addEventListener(e, scrolling.prevent, {passive: false}));
 //       }
-//     });
-//     currentIndex = index;
-//     console.log(index);
-  
-//   }
-  
-//   // pin swipe section and initiate observer
-//   ScrollTrigger.create({
-//     trigger: ".card",
-//     pin: true,
-//     start: "top top",
-//     end: "+=1",
-//     onEnter: (self) => {
-//       intentObserver.enable();
-//       gotoCard(currentIndex + 1, true);    
 //     },
-//     onEnterBack: (self) => {
-//       intentObserver.enable();
-//       gotoCard(currentIndex - 1, false);
+//     enable() {
+//       if (!scrolling.enabled) {
+//         scrolling.enabled = true;
+//         window.removeEventListener("scroll", gsap.ticker.tick);
+//         scrolling.events.forEach((e, i) => (i ? document : window).removeEventListener(e, scrolling.prevent));
+//       }
 //     }
-//   })
+//   };
 
 
+// function goToSection(section, anim, i) {
+//   if (scrolling.enabled) { // skip if a scroll tween is in progress
+//     scrolling.disable();
+//     gsap.to(window, {
+//       scrollTo: {y: section, autoKill: false},
+//       onComplete: scrolling.enable,
+//       duration: 2,
+//     });
 
-
-
-
-
-// Перемещение к блоку по скроллу
-
-
-// gsap.to(window, {
-//   duration: 1,
-//   scrollTo: {
-//     y: "#block2",
-//     offsetY: "50%" // Перемещение в центр блока
+//     anim && anim.restart();
 //   }
-// });
 // }
 
+// sections.forEach((section) => {
+
+//   ScrollTrigger.create({
+//     trigger: section,
+//     start: "top bottom-=1",
+//     end: "bottom top+=1",
+//     markers: true,
+//     onEnter: () => goToSection(section),
+//     onEnterBack: () => goToSection(section)
+//   });
+ 
+// });
 
 
 
 
 
 
-import { gsap } from 'gsap';
-import {ScrollToPlugin} from 'gsap/ScrollToPlugin'
 
-gsap.registerPlugin(ScrollToPlugin)
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
-// Определение первого блока
-const cardLeftBlock = document.querySelector('.card-left');
-// Определение второго блока
-const cardRightBlock = document.querySelector('.card-right');
+// Регистрируем плагины
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-// Определение позиции первого блока
-const cardLeftBlockPosition = cardLeftBlock.getBoundingClientRect().top + window.scrollY;
-// Определение позиции второго блока
-const cardRightBlockPosition = cardRightBlock.getBoundingClientRect().top + window.scrollY;
+const sections = document.querySelectorAll(".about__block");
 
-// Определение начальной позиции пользователя
-let userPosition = 0;
 
-// Обработчик события прокрутки страницы
-window.addEventListener('scroll', function() {
-  // Определение текущей позиции пользователя
-  userPosition = window.scrollY;
-
-  // Проверка, достигнут ли пользователь блоком 1
-  if (userPosition >= cardLeftBlockPosition) {
-    // Анимация перемещения пользователя в центр блока 1
-    gsap.to(this.window, {
-      duration: 1,
-      scrollTo: {
-        y: ".card-left",
-        offsetY: "50%" // Перемещение в центр блока
-      }
-    });
+const scrolling = {
+  enabled: true,
+  events: "scroll,wheel,touchmove,pointermove".split(","),
+  prevent: e => e.preventDefault(),
+  disable() {
+    if (scrolling.enabled) {
+      scrolling.enabled = false;
+      window.addEventListener("scroll", gsap.ticker.tick, {passive: true});
+      scrolling.events.forEach((e, i) => (i ? document : window).addEventListener(e, scrolling.prevent, {passive: false}));
+    }
+  },
+  enable() {
+    if (!scrolling.enabled) {
+      scrolling.enabled = true;
+      window.removeEventListener("scroll", gsap.ticker.tick);
+      scrolling.events.forEach((e, i) => (i ? document : window).removeEventListener(e, scrolling.prevent));
+    }
   }
+};
 
-  // Проверка, достигнут ли пользователь блоком 2
-  if (userPosition >= cardRightBlockPosition) {
-    // Анимация перемещения пользователя в центр блока 2
+
+
+
+
+
+function goToSection(section, i) {
+  if (scrolling.enabled) { // skip if a scroll tween is in progress
+    scrolling.disable();
     gsap.to(window, {
+      scrollTo: {y: section ,autoKill: false},
       duration: 1,
-      scrollTo: {
-        y: ".card-right",
-        offsetY: "50%" // Перемещение в центр блока
-      }
     });
-  }
-});
 
-// Обработчик события прокрутки вверх
-window.addEventListener('wheel', function(event) {
-  // Определение направления прокрутки
-  const direction = event.deltaY > 0 ? 'down' : 'up';
-
-  // Проверка, находится ли пользователь в блоке 1
-  if (userPosition >= cardLeftBlockPosition && userPosition < cardRightBlockPosition) {
-    // Проверка, прокручивается ли пользователь вниз
-    if (direction === 'down') {
-      // Анимация перемещения пользователя в центр блока 2
-      gsap.to(window, {
-        duration: 1,
-        scrollTo: {
-          y: ".card-right",
-          offsetY: "50%" // Перемещение в центр блока
-        }
-      });
-    } else {
-      // Анимация перемещения пользователя к заголовку перед блоком 1
-      gsap.to(window, {
-        duration: 1,
-        scrollTo: {
-          y: ".kuromi",
-          offsetY: "50%" // Перемещение к заголовку
-        }
-      });
-    }
+    gsap.from(section.querySelector('.about__card '),{
+      scaleX: 0,
+      duration: 1,
+      delay: 1,
+      transformOrigin: i === 0 ? 'right': 'left',
+      onComplete: scrolling.enable,
+    })
+    // На случай, если будем передавать анимацию из sections.forEach
+    // anim && anim.restart();
   }
+}
 
-  // Проверка, находится ли пользователь в блоке 2
-  if (userPosition >= cardRightBlockPosition) {
-    // Проверка, прокручивается ли пользователь вниз
-    if (direction === 'down') {
-      // Анимация перемещения пользователя в центр блока 3
-      gsap.to(window, {
-        duration: 1,
-        scrollTo: {
-          y: ".block2",
-          offsetY: "50%" // Перемещение в центр блока
-        }
-      });
-    } else {
-      // Анимация перемещения пользователя к заголовку перед блоком 3
-      gsap.to(window, {
-        duration: 1,
-        scrollTo: {
-          y: ".card-left",
-          offsetY: "50%" // Перемещение к заголовку
-        }
-      });
-    }
-  }
+
+
+
+
+sections.forEach((section, i) => {
+
+  ScrollTrigger.create({
+    trigger: section,
+    start: "top bottom-=1",
+    end: "bottom top+=1",
+    markers: true,
+    onEnter: () => goToSection(section, i),
+    onEnterBack: () => goToSection(section, i),
+  });
+
 });
