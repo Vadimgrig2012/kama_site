@@ -24,7 +24,7 @@ titles.forEach((title) => {
 	opacity: 0, 
 	ease: 'bounce.out',
 	delay: 0.1,
-	stagger: 0.2,
+	stagger: 0.1,
 	duration: 0.3,
 	})
 });
