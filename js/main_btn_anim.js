@@ -1,11 +1,34 @@
 import { gsap } from "gsap";
 
+
+
 let mm = gsap.matchMedia();
 mm.add("(min-width: 1025px)", () => {
 
     const button = document.querySelector('.interactive-block__btn');
     const txtBtn = document.querySelector('.interactive-block__btn-text')
     const iconBtn = document.querySelector('.interactive-block__btn-icon')
+
+    const tl = gsap.timeline({ repeat: -1, yoyo: true });
+
+	tl.to(button, {
+		duration: 2,
+		y: '1.5rem',
+		ease: 'sine.inOut',
+	});
+
+    button.addEventListener('mouseenter', () => {
+        tl.pause();
+    });
+      
+    button.addEventListener('mouseleave', () => {
+        setTimeout(() =>{
+            tl.restart();
+        }, 2000)
+        
+    });
+
+
 
     button.addEventListener('mousemove', (e) => {
 
@@ -78,7 +101,7 @@ mm.add("(min-width: 1025px)", () => {
             x: 0,
             y: 0,
             scale: 1,
-            duration: 1,
+            duration: 0.7,
             ease: 'elastic.out(1,0.3)'
         });
     });
