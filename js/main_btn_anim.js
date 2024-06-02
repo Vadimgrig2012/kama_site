@@ -24,7 +24,7 @@ mm.add("(min-width: 1025px)", () => {
     button.addEventListener('mouseleave', () => {
         setTimeout(() =>{
             tl.restart();
-        }, 2000)
+        }, 1500)
         
     });
 
