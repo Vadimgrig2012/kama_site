@@ -156,6 +156,16 @@
         margin-left: 20.8rem;
         z-index: 1;
     }
+
+    &__rectangle {
+        position: absolute;
+        z-index: -1;
+        right: -15.7rem;
+    }
+
+    &__unicorn-circle {
+        margin-right: 30rem;
+    }
 }
 
 

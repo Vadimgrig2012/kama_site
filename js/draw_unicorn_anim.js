@@ -1,7 +1,7 @@
 import { gsap } from "gsap";
 
 const svgPath = document.querySelector('.unicorn-path');
-const animateBtn = document.querySelector('.about__btn'); 
+const animateBtn = document.getElementById('about__btn-1'); 
 
 let tl = gsap.timeline({ paused: true });
 
