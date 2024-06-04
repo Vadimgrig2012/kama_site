@@ -15,7 +15,8 @@ function animateCircle(circle) {
 		duration: 3,
 		y: '+=3rem',
 		ease: 'sine.inOut',
-		delay: Math.random() * 1
+		delay: Math.random() * 1,
+		rotateZ: "random(-45, 45, 5)"
 	});
 }
 
