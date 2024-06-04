@@ -11,21 +11,19 @@ mm.add("(min-width: 1025px)", () => {
 
     const tl = gsap.timeline({ repeat: -1, yoyo: true });
 
-	tl.to(button, {
+	tl.delay(1.5).to(button, {
 		duration: 2,
 		y: '1.5rem',
 		ease: 'sine.inOut',
 	});
 
     button.addEventListener('mouseenter', () => {
-        tl.pause();
+        // tl.pause();
+        tl.revert();
     });
       
     button.addEventListener('mouseleave', () => {
-        setTimeout(() =>{
-            tl.restart(true, false);
-        }, 1500)
-        
+        tl.restart(true, false);
     });
 
 
