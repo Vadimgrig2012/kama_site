@@ -146,13 +146,16 @@
         right: 9.3rem;
     }
 
-    &__triangle {
+    &__triangle-svg {
         position: absolute;
-        left: -6.7rem;
+    }
+
+    #Tr1 {
+        left: -4.7rem;
+        top: 13.1rem;
     }
 
     &__unicorn {
-        position: relative;
         margin-left: 20.8rem;
         z-index: 1;
     }

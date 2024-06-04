@@ -5,7 +5,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 // Анимация about__block-right
 
-const tlBubleRight = gsap.timeline({
+const tlAnimBgElRight = gsap.timeline({
     repeat: -1,
     yoyo: true,
 })
@@ -14,15 +14,16 @@ const tlRightCard = gsap.timeline({
     scrollTrigger: {
         trigger: '.about__card-right',
         start: '20% 70% ',
+        endTrigger: '.about__triangle',
         end: '80% 50%',
         toggleActions: "play reverse reverse reverse",
-        // markers: true,
+        markers: true,
         onEnter: () => {
-            tlBubleRight.restart(true, false);
+            tlAnimBgElRight.restart(true, false);
         },
         onEnterBack: () => {
             tlRightCard.restart();
-            tlBubleRight.restart(true, false);
+            tlAnimBgElRight.restart(true, false);
         }
     }
 });
@@ -30,10 +31,10 @@ const tlRightCard = gsap.timeline({
 
 
 const triangelTop = gsap.utils.toArray(['#Tr1', '#Tr3', '#Tr5', '#Tr7'])
-const triangelBpttom = gsap.utils.toArray(['#Tr2', '#Tr4', '#Tr6'])
+const triangelBottom = gsap.utils.toArray(['#Tr2', '#Tr4', '#Tr6'])
 
 
-tlBubleRight.delay(1).from('#about__bubl-bg--right', {
+tlAnimBgElRight.delay(1).from('#about__bubl-bg--right', {
     y: "-3rem",
     ease: 'sine.inOut',
     duration: 3,
@@ -81,7 +82,7 @@ tlRightCard.from('.about__card-right', {
     stagger: 0.1,
     duration: 1
 }, 0.4)
-.from(triangelBpttom, {
+.from(triangelBottom, {
     opacity: 0,
     y: '10rem',
     ease: "elastic.out(1,0.3)",
