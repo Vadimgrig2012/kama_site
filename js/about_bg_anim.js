@@ -35,7 +35,7 @@ const triangelBpttom = gsap.utils.toArray(['#Tr2', '#Tr4', '#Tr6'])
 
 tlBubleRight.delay(1).from('#about__bubl-bg--right', {
     y: "-3rem",
-    ease: 'power1.inOut',
+    ease: 'sine.inOut',
     duration: 3,
     stagger: 0.5,
 })
