@@ -5,31 +5,44 @@ gsap.registerPlugin(ScrollTrigger);
 
 // Анимация about__block-right
 
-const tl_right_card = gsap.timeline({
+const tlBubleRight = gsap.timeline({
+    repeat: -1,
+    yoyo: true,
+})
+
+const tlRightCard = gsap.timeline({
     scrollTrigger: {
         trigger: '.about__card-right',
         start: '20% 70% ',
         end: '80% 50%',
         toggleActions: "play reverse reverse reverse",
         // markers: true,
-        onEnterBack: () => {
-            tl_right_card.restart();
+        onEnter: () => {
+            tlBubleRight.restart(true, false);
         },
-        onLeave: () => {
-            arrBubleRight.forEach((buble) => {
-                gsap.to(buble, {
-                    repeat: -1,
-                });
-            });
+        onEnterBack: () => {
+            tlRightCard.restart();
+            tlBubleRight.restart(true, false);
         }
     }
 });
+
+
 
 const triangelTop = gsap.utils.toArray(['#Tr1', '#Tr3', '#Tr5', '#Tr7'])
 const triangelBpttom = gsap.utils.toArray(['#Tr2', '#Tr4', '#Tr6'])
 
 
-tl_right_card.from('.about__card-right', {
+tlBubleRight.delay(1).from('#about__bubl-bg--right', {
+    y: "-3rem",
+    ease: 'power1.inOut',
+    duration: 3,
+    stagger: 0.5,
+})
+
+
+
+tlRightCard.from('.about__card-right', {
     transformOrigin: 'right',
     scaleX: 0,
     duration: 0.4,
