@@ -12,10 +12,9 @@ const tlAnimBgElRight = gsap.timeline({
 
 const tlRightCard = gsap.timeline({
     scrollTrigger: {
-        trigger: '.about__card-right',
-        start: '20% 70% ',
-        endTrigger: '.about__triangle',
-        end: '80% 50%',
+        trigger: '.about__block-right',
+        start: '30% 50%',
+        end: '70% 50%',
         toggleActions: "play reverse reverse reverse",
         markers: true,
         onEnter: () => {
