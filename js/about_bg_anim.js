@@ -31,14 +31,50 @@ const tlRightCard = gsap.timeline({
 
 const triangelTop = gsap.utils.toArray(['#Tr1', '#Tr3', '#Tr5', '#Tr7'])
 const triangelBottom = gsap.utils.toArray(['#Tr2', '#Tr4', '#Tr6'])
-
+const animBtnTriangle = document.getElementById('about__btn-1'); 
+let animTriangle = null;
+let animTriangle2 = null;
 
 tlAnimBgElRight.delay(1).from('#about__bubl-bg--right', {
-    y: "-3rem",
+    y: "5rem",
     ease: 'sine.inOut',
     duration: 3,
     stagger: 0.5,
 })
+
+
+animBtnTriangle.addEventListener('click', () => {
+    animFuncTriangle();
+})
+
+function animFuncTriangle() {
+    if (animTriangle) {
+        animTriangle.restart();
+        animTriangle2.restart();
+    } else {
+        animTriangle = gsap.to(triangelTop, { 
+            x: "20rem",
+            opacity: 0,
+            duration: 1,
+            ease: 'sine.inOut',
+            yoyo: true,
+            repeat: 1,
+            delay: 0.7,
+            repeatDelay: 4
+        });
+        animTriangle2 = gsap.to(triangelBottom, { 
+            x: "-20rem",
+            opacity: 0,
+            duration: 1,
+            ease: 'sine.inOut',
+            yoyo: true,
+            repeat: 1,
+            delay: 0.7,
+            repeatDelay: 4
+        });
+    }
+}
+
 
 
 
