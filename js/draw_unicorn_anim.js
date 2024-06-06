@@ -4,7 +4,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 
-const tlElement = gsap.timeline();
 const tlRightCard = gsap.timeline({
     scrollTrigger: {
         trigger: '.about__block-right',
@@ -14,13 +13,11 @@ const tlRightCard = gsap.timeline({
         onEnter: () => bubbleAnim.restart()
     }
 });
-
+const tlElement = gsap.timeline({ paused: true });
 const svgPath = document.getElementById('unicorn-path');
 const animateBtn = document.getElementById('about__btn-1');
 const triangelTop = gsap.utils.toArray(['#Tr1', '#Tr3', '#Tr5', '#Tr7']);
 const triangelBottom = gsap.utils.toArray(['#Tr2', '#Tr4', '#Tr6']);
-let animation = false;
-
 
 
 
@@ -39,42 +36,38 @@ let bubbleAnim = gsap.from('#about__bubl-bg--right', {
 
 
 animateBtn.addEventListener('click', () => {
-    if (animation) {
-        tlElement.seek(0).play();
-    } else {
-        tlElement.to(svgPath, { 
-            duration: 3, 
-            strokeDashoffset: 0, 
-            ease: "power2.inOut",
-            repeat: 1, 
-            yoyo: true,
-            repeatDelay: 0.5,
-        }, 0)
-        .to(triangelTop, { 
-            x: "20rem",
-            opacity: 0,
-            duration: 0.5,
-            scale: 0,
-            ease: 'sine.inOut',
-            yoyo: true,
-            repeat: 1,
-            repeatDelay: 5
-        }, 0)
-        .to(triangelBottom, { 
-            x: "-20rem",
-            opacity: 0,
-            duration: 0.5,
-            scale: 0,
-            ease: 'sine.inOut',
-            yoyo: true,
-            repeat: 1,
-            repeatDelay: 5,
-            onStart: () => animation = true,
-            onComplete: () => animation = false
-        }, 0);
-    }
+    tlElement.seek(0);
+    tlElement.play();
 });
 
+tlElement.to(svgPath, { 
+duration: 3, 
+strokeDashoffset: 0, 
+ease: "power2.inOut",
+repeat: 1, 
+yoyo: true,
+repeatDelay: 0.5,
+}, 0)
+.to(triangelTop, { 
+    x: "20rem",
+    opacity: 0,
+    duration: 0.5,
+    scale: 0,
+    ease: 'sine.inOut',
+    yoyo: true,
+    repeat: 1,
+    repeatDelay: 5
+}, 0)
+.to(triangelBottom, { 
+    x: "-20rem",
+    opacity: 0,
+    duration: 0.5,
+    scale: 0,
+    ease: 'sine.inOut',
+    yoyo: true,
+    repeat: 1,
+    repeatDelay: 5,
+}, 0);
 
 
 
