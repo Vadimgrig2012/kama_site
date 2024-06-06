@@ -56,7 +56,7 @@ ease: "power2.inOut",
 repeat: 1, 
 yoyo: true,
 repeatDelay: 0.5,
-}, 0)
+}, 0.3)
 .to(triangelTop, { 
     x: "20rem",
     opacity: 0.5,
@@ -65,7 +65,7 @@ repeatDelay: 0.5,
     ease: 'sine.inOut',
     yoyo: true,
     repeat: 1,
-    repeatDelay: 5
+    repeatDelay: 6
 }, 0)
 .to(triangelBottom, { 
     x: "-20rem",
@@ -75,7 +75,7 @@ repeatDelay: 0.5,
     ease: 'sine.inOut',
     yoyo: true,
     repeat: 1,
-    repeatDelay: 5,
+    repeatDelay: 6,
 }, 0);
 
 
@@ -102,7 +102,7 @@ tlRightCard.from('.about__card-right', {
     duration: 1
 }, 0.5)
 .to(number, {
-    duration: 1,
+    duration: 2,
     textContent: 8,
     modifiers: {
         textContent: value => Math.round(value)

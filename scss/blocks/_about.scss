@@ -145,6 +145,19 @@
         right: 9.3rem;
     }
 
+    &__bubl-bg1-left{
+        right: 60rem;
+    }
+
+    &__bubl-bg2-left{
+        top: 35rem;
+    }
+
+    &__bubl-bg3-left{
+        bottom: 30rem;
+    }
+
+    // Triangle
     &__triangle-svg {
         position: absolute;
     }
@@ -190,15 +203,71 @@
         z-index: 2;
     }
 
-    &__rectangle {
+
+    // Rect 
+    &__rectangle-svg{
         position: absolute;
+        z-index: 1;
+    }
+
+    #Rect1 {
+        top: 30rem;
+        right: 3rem;
+    }
+
+    #Rect2 {
+        top: 37rem;
+        right: -18rem;
         z-index: -1;
-        right: -15.7rem;
+    }
+
+    #Rect3 {
+        top: 12rem;
+        right: 28rem;
+    }
+
+    #Rect4 {
+        top: 15rem;
+        right: -8rem;
+        z-index: -1;
+    }
+
+    #Rect5 {
+        top: 43rem;
+        right: 70rem;
+        z-index: -1;
+    }
+
+    #Rect6 {
+        top: 18rem;
+        right: 70rem;
+        z-index: -2;
+    }
+
+    #Rect7 {
+        top: 10rem;
+        right: 70rem;
+        z-index: -3;
+    }
+
+    #Rect8 {
+        top: 37rem;
+        right: 35rem;
+        z-index: -3;
+    }
+
+    #Rect9 {
+        top: 10rem;
+        right: 10rem;
+        z-index: -3;
     }
 
     &__unicorn-circle {
         margin-right: 30rem;
+        z-index: 5;
     }
+
+
 }
 
 
