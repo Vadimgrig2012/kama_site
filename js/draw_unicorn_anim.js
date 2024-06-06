@@ -1,6 +1,7 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(gsap.core.globals);
 
 
 
@@ -9,7 +10,7 @@ const tlRightCard = gsap.timeline({
         trigger: '.about__block-right',
         start: '30% 50%',
         end: '70% 50%',
-        markers: true,
+        // markers: true,
         onEnter: () => bubbleAnim.restart()
     }
 });
@@ -18,6 +19,8 @@ const svgPath = document.getElementById('unicorn-path');
 const animateBtn = document.getElementById('about__btn-1');
 const triangelTop = gsap.utils.toArray(['#Tr1', '#Tr3', '#Tr5', '#Tr7']);
 const triangelBottom = gsap.utils.toArray(['#Tr2', '#Tr4', '#Tr6']);
+let number = document.querySelector('.number');
+
 
 
 
@@ -38,6 +41,12 @@ let bubbleAnim = gsap.from('#about__bubl-bg--right', {
 animateBtn.addEventListener('click', () => {
     tlElement.seek(0);
     tlElement.play();
+    gsap.to(animateBtn, {
+        y: "1rem",
+        duration: 0.05,
+        repeat: 1,
+        yoyo: true
+    })
 });
 
 tlElement.to(svgPath, { 
@@ -50,9 +59,9 @@ repeatDelay: 0.5,
 }, 0)
 .to(triangelTop, { 
     x: "20rem",
-    opacity: 0,
+    opacity: 0.5,
+    rotateY: 90,
     duration: 0.5,
-    scale: 0,
     ease: 'sine.inOut',
     yoyo: true,
     repeat: 1,
@@ -60,9 +69,9 @@ repeatDelay: 0.5,
 }, 0)
 .to(triangelBottom, { 
     x: "-20rem",
-    opacity: 0,
+    opacity: 0.5,
+    rotateY: -90,
     duration: 0.5,
-    scale: 0,
     ease: 'sine.inOut',
     yoyo: true,
     repeat: 1,
@@ -92,6 +101,14 @@ tlRightCard.from('.about__card-right', {
     ease: "elastic.out(1,0.3)",
     duration: 1
 }, 0.5)
+.to(number, {
+    duration: 1,
+    textContent: 8,
+    modifiers: {
+        textContent: value => Math.round(value)
+    },
+    ease: 'sine.inOut'
+}, 0.8)
 .from('#about__text--right', {
     opacity: 0,
     y: '3rem',

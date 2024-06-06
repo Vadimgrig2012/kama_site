@@ -26,6 +26,14 @@ mm.add("(min-width: 1025px)", () => {
         tl.restart(true, false);
     });
 
+    button.addEventListener('click', () => {
+        gsap.to(button, {
+            y: "0.1rem",
+            duration: 0.05,
+            repeat: 1,
+            yoyo: true
+        })
+    });
 
 
     button.addEventListener('mousemove', (e) => {
