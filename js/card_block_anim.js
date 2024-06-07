@@ -80,3 +80,71 @@
 //   });
 
 // });
+
+
+
+
+
+// import { gsap } from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// // Регистрируем плагины
+// gsap.registerPlugin(ScrollTrigger);
+
+// ScrollTrigger.create({
+//     trigger: ".background__vector-svg",
+//     animation: drawLine(ScrollTrigger),
+//     start: "top top",
+//     end: "100% 100%",
+//     scrub: 4,
+//     markers: true
+// });
+
+
+// function drawLine (self) {
+//     window.addEventListener('scroll', function() {
+//         let l = Path_440.getTotalLength();
+//         let dasharray = l;
+//         let dashoffset = l;
+//         let e = document.documentElement;
+//         theFill.setAttributeNS(null, "stroke-dasharray", l);
+//         theFill.setAttributeNS(null, "stroke-dashoffset", l);
+//         dashoffset = l - window.scrollY * l / (e.scrollHeight - e.clientHeight);
+//       //   console.log('window.scrollY', window.scrollY, 'scrollTop', e.scrollTop, 'scrollHeight', e.scrollHeight, 'clientHeight', e.clientHeight, 'dash-offset', dashoffset);
+//         theFill.setAttributeNS(null, "stroke-dashoffset", dashoffset);
+//     })
+// }
+
+
+
+
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Регистрируем плагины
+gsap.registerPlugin(ScrollTrigger);
+
+function drawLine() {
+    const path = document.querySelector("#Path_440");
+    const theFill = document.querySelector("#theFill");
+    const pathLength = path.getTotalLength();
+
+    gsap.set(theFill, {
+        strokeDasharray: pathLength,
+        strokeDashoffset: pathLength
+    });
+
+    ScrollTrigger.create({
+        trigger: ".background__vector-svg",
+        animation: gsap.to(theFill, {
+            strokeDashoffset: 0,
+            ease: 'none'
+        }),
+        start: "top 50%",
+        end: "100% 50%",
+        scrub: 1,
+        markers: true
+    });
+}
+
+drawLine();

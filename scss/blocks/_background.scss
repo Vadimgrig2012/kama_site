@@ -1,4 +1,11 @@
 .background {
+    
+    &__vector-svg {
+        position: absolute;
+        z-index: -999;
+        top: 230rem;
+        left: 17.4rem;
+    }
 
     &__img-wrapper {
         width: 90.6rem;
