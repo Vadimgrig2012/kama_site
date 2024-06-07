@@ -124,27 +124,24 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 // Регистрируем плагины
 gsap.registerPlugin(ScrollTrigger);
 
-function drawLine() {
-    const path = document.querySelector("#Path_440");
-    const theFill = document.querySelector("#theFill");
-    const pathLength = path.getTotalLength();
 
-    gsap.set(theFill, {
-        strokeDasharray: pathLength,
-        strokeDashoffset: pathLength
-    });
+const path = document.querySelector("#vector-svg-path");
+const theFill = document.querySelector("#theFill");
+const pathLength = path.getTotalLength();
 
-    ScrollTrigger.create({
-        trigger: ".background__vector-svg",
-        animation: gsap.to(theFill, {
-            strokeDashoffset: 0,
-            ease: 'none'
-        }),
-        start: "top 50%",
-        end: "100% 50%",
-        scrub: 1,
-        markers: true
-    });
-}
+gsap.set(theFill, {
+    strokeDasharray: pathLength,
+    strokeDashoffset: pathLength
+});
 
-drawLine();
+ScrollTrigger.create({
+    trigger: ".background__vector-svg",
+    animation: gsap.to(theFill, {
+        strokeDashoffset: 0,
+        ease: 'none'
+    }),
+    start: "top 50%",
+    end: "100% 50%",
+    scrub: 1,
+    markers: true
+});
