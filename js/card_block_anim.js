@@ -138,10 +138,11 @@ ScrollTrigger.create({
     trigger: ".background__vector-svg",
     animation: gsap.to(theFill, {
         strokeDashoffset: 0,
-        ease: 'none'
+        ease: 'none',
+        delay: 0
     }),
     start: "top 50%",
     end: "100% 50%",
     scrub: 1,
-    markers: true
+    // markers: true
 });

@@ -23,11 +23,15 @@
     &__block-right {
         display: flex;
         align-items: center;
+        padding-top: 18rem;
+        padding-bottom: 18rem;
     }
 
     &__block-left {
         display: flex;
         align-items: center;
+        padding-top: 18rem;
+        padding-bottom: 18rem;
     }
 
     &__card-right {
@@ -163,38 +167,38 @@
 
     #Tr1 {
         left: -6.7rem;
-        top: 22.1rem;
+        top: 29.1rem;
     }
 
     #Tr3 {
         left: 31rem;
-        top: 28.1rem;
+        top: 35.1rem;
     }
 
     #Tr4 {
         left: 29rem;
-        top: 10rem;
+        top: 17rem;
         z-index: 1;
     }
 
     #Tr2 {
         left: 8rem;
-        top: 30rem;
+        top: 37rem;
     }
 
     #Tr5 {
         left: 68rem;
-        top: 21rem;
+        top: 28rem;
     }
 
     #Tr6 {
         left: 69rem;
-        top: 41rem;
+        top: 48rem;
     }
 
     #Tr7 {
         left: 78rem;
-        top: 16rem;
+        top: 23rem;
     }
 
     &__unicorn {
@@ -210,53 +214,53 @@
     }
 
     #Rect1 {
-        top: 30rem;
+        top: 37rem;
         right: 3rem;
     }
 
     #Rect2 {
-        top: 37rem;
+        top: 44rem;
         right: -18rem;
         z-index: -1;
     }
 
     #Rect3 {
-        top: 12rem;
+        top: 19rem;
         right: 28rem;
     }
 
     #Rect4 {
-        top: 15rem;
+        top: 22rem;
         right: -8rem;
         z-index: -1;
     }
 
     #Rect5 {
-        top: 43rem;
+        top: 50rem;
         right: 70rem;
         z-index: -1;
     }
 
     #Rect6 {
-        top: 18rem;
+        top: 25rem;
         right: 70rem;
         z-index: -2;
     }
 
     #Rect7 {
-        top: 10rem;
+        top: 17rem;
         right: 70rem;
         z-index: -3;
     }
 
     #Rect8 {
-        top: 37rem;
+        top: 44rem;
         right: 35rem;
         z-index: -3;
     }
 
     #Rect9 {
-        top: 10rem;
+        top: 17rem;
         right: 10rem;
         z-index: -3;
     }
