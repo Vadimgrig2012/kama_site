@@ -71,8 +71,8 @@ tlElement.to(arrLeftRectangle, {
     stagger: 0.05
 }, 0)
 .from('.about__unicorn-circle', {
-    y: '-15rem',
-    scale: 0.5,
+    y: '-30rem',
+    // scale: 0.5,
     ease: 'sine.inOut',
     opacity: 0,
     yoyo: true,
