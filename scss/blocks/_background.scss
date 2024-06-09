@@ -5,6 +5,9 @@
         z-index: -999;
         top: 240rem;
         left: 17.4rem;
+        @media (max-width: 1024px) {
+            display: none;
+        }
     }
 
     &__img-wrapper {
