@@ -2,11 +2,12 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
+const matchMedia = window.matchMedia("(max-width: 1024px)");
 
 const tlRightCard = gsap.timeline({
     scrollTrigger: {
         trigger: '.about__block-left',
-        start: '30% 50%',
+        start: matchMedia.matches ? 'top 50%' : '30% 50%',
         end: '70% 50%',
         // markers: true,
         onEnter: () => bubbleAnim.restart()

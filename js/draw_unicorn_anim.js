@@ -3,17 +3,20 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(gsap.core.globals);
 
-
+const matchMedia = window.matchMedia("(max-width: 1024px)");
 
 const tlRightCard = gsap.timeline({
     scrollTrigger: {
         trigger: '.about__block-right',
-        start: '30% 50%',
+        start: matchMedia.matches ? 'top 50%' : '30% 50%',
         end: '70% 50%',
         // markers: true,
         onEnter: () => bubbleAnim.restart()
     }
 });
+
+
+
 const tlElement = gsap.timeline({ paused: true });
 const svgPath = document.getElementById('unicorn-path');
 const animateBtn = document.getElementById('about__btn-1');

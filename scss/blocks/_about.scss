@@ -32,6 +32,9 @@
             padding-top: 0;
             padding-bottom: 15rem;
         }
+        @media (max-width: 767px) {
+            padding-bottom: 10rem;
+        }
     }
 
     &__block-left {
@@ -62,6 +65,10 @@
             width: 60.9rem;
             height: 50rem;
         }
+        @media (max-width: 767px) {
+            width: 30rem;
+            height: 28.2rem;
+        }
     }
 
     &__card-left {
@@ -80,6 +87,10 @@
             width: 60.9rem;
             height: 50rem;
         }
+        @media (max-width: 767px) {
+            width: 30rem;
+            height: 28.2rem;
+        }
     }
 
     &__subtitle {
@@ -95,6 +106,11 @@
             margin-top: 2rem;
             line-height: 4rem;
         }
+        @media (max-width: 767px) {
+            font-size: 1.5rem;
+            line-height: 2rem;
+            margin-top: 1.5rem;
+        }
     }
 
     &__text {
@@ -109,6 +125,11 @@
             font-size: 2.2rem;
             margin-top: 3.2rem;
             line-height: 3.2rem;
+        }
+        @media (max-width: 767px) {
+            font-size: 1.2rem;
+            line-height: 2rem;
+            margin-top: 1.5rem;
         }
     }
 
@@ -159,6 +180,11 @@
             width: 10rem;
             height: 10rem;
         }
+        @media (max-width: 767px) {
+            margin-top: 1.5rem;
+            width: 5rem;
+            height: 5rem;
+        }
     }
 
     &__icon-btn{
@@ -169,6 +195,10 @@
             width: 5.3rem;
             height: 5.3rem;
         }
+        @media (max-width: 767px) {
+            width: 2.6rem;
+            height: 2.6rem;
+        }
     }
 
     &__bubl-bg {
@@ -176,6 +206,9 @@
         position: absolute;
         backdrop-filter: blur(0.12rem);
         background: linear-gradient(144.67deg, rgba(176, 143, 182, 0.28) -4.571%,rgba(153, 153, 153, 0) 134.069%);
+        @media (max-width: 1024px) {
+            backdrop-filter: blur(0.08rem);
+        }
     }
 
     &__bubl-bg1 {
@@ -186,6 +219,12 @@
         @media (max-width: 1024px) {
             width: 4.6rem;
             height: 4.6rem;
+        }
+        @media (max-width: 767px) {
+            width: 4rem;
+            height: 4rem;
+            right: 2rem;
+            top: 3rem;
         }
     }
 
@@ -198,6 +237,12 @@
             width: 17.8rem;
             height: 17.8rem;
         }
+        @media (max-width: 767px) {
+            width: 12rem;
+            height: 12rem;
+            left: 17rem;
+            top: 10rem;
+        }
     }
 
     &__bubl-bg3 {
@@ -209,6 +254,12 @@
             width: 11.2rem;
             height: 11.2rem;
         }
+        @media (max-width: 767px) {
+            width: 7.8rem;
+            height: 7.8rem;
+            bottom: 18rem;
+            right: 20rem;
+        }
     }
 
     &__bubl-bg1-left{
@@ -217,6 +268,10 @@
             right: 50rem;
             top: 5rem;
         }
+        @media (max-width: 767px) {
+            right: 3rem;
+            top: 15rem;
+        }
     }
 
     &__bubl-bg2-left{
@@ -224,10 +279,18 @@
         @media (max-width: 1024px) {
             top: 25rem;
         }
+        @media (max-width: 767px) {
+            left: 3rem;
+            top: 3rem;
+        }
     }
 
     &__bubl-bg3-left{
         bottom: 30rem;
+        @media (max-width: 767px) {
+            right: 3rem;
+            top: 1rem;
+        }
     }
 
     // Triangle
@@ -243,6 +306,11 @@
             height: 24.5rem;
             top: 60rem;
         }
+        @media (max-width: 767px) {
+            width: 9.4rem;
+            height: 12.4rem;
+            top: 33rem;
+        }
     }
 
     #Tr3 {
@@ -253,6 +321,12 @@
             height: 9.9rem;
             top: 62rem;
             left: 22rem;
+        }
+        @media (max-width: 767px) {
+            width: 3.8rem;
+            height: 5rem;
+            top: 35rem;
+            left: 8.5rem;
         }
     }
 
@@ -266,6 +340,12 @@
             top: 50rem;
             left: 21rem;
         }
+        @media (max-width: 767px) {
+            width: 17.6rem;
+            height: 24.4rem;
+            top: 29rem;
+            left: 7rem;
+        }
     }
 
     #Tr2 {
@@ -277,6 +357,13 @@
             top: 63rem;
             left: 7rem;
         }
+        @media (max-width: 767px) {
+            width: 11.7rem;
+            height: 15.4rem;
+            top: 35rem;
+            left: 1rem;
+        }
+        
     }
 
     #Tr5 {
@@ -287,6 +374,12 @@
             height: 9.9rem;
             top: 60rem;
             left: 48rem;
+        }
+        @media (max-width: 767px) {
+            width: 3.8rem;
+            height: 5rem;
+            top: 35rem;
+            left: 20rem;
         }
     }
 
@@ -299,6 +392,12 @@
             top: 71rem;
             left: 48rem;
         }
+        @media (max-width: 767px) {
+            width: 8.2rem;
+            height: 10.8rem;
+            top: 39.5rem;
+            left: 20rem;
+        }
     }
 
     #Tr7 {
@@ -309,6 +408,12 @@
             height: 33.6rem;
             top: 55rem;
             left: 55rem;
+        }
+        @media (max-width: 767px) {
+            width: 13rem;
+            height: 17rem;
+            top: 31rem;
+            left: 23rem;
         }
     }
 
@@ -321,6 +426,11 @@
             width: 45.5rem;
             height: 43.5rem;
             margin-top: 3.3rem;
+        }
+        @media (max-width: 767px) {
+            width: 23.8rem;
+            height: 22.9rem;
+            margin-top: 2.3rem;
         }
     }
 
@@ -340,6 +450,12 @@
             top: 63rem;
             left: 35rem;
         }
+        @media (max-width: 767px) {
+            width: 16.9rem;
+            height: 16.9rem;
+            top: 35rem;
+            left: 15rem;
+        }
     }
 
     #Rect2 {
@@ -352,6 +468,12 @@
             top: 67rem;
             left: 53rem;
         }
+        @media (max-width: 767px) {
+            width: 14.5rem;
+            height: 14.5rem;
+            top: 37rem;
+            left: 23rem;
+        }
     }
 
     #Rect3 {
@@ -362,6 +484,12 @@
             height: 30.7rem;
             top: 50rem;
             left: 20rem;
+        }
+        @media (max-width: 767px) {
+            width: 15.8rem;
+            height: 15.8rem;
+            top: 30rem;
+            left: 5rem;
         }
     }
 
@@ -375,6 +503,12 @@
             top: 52rem;
             left: 55rem;
         }
+        @media (max-width: 767px) {
+            width: 10rem;
+            height: 10rem;
+            top: 31rem;
+            left: 26rem;
+        }
     }
 
     #Rect5 {
@@ -386,6 +520,12 @@
             height: 24.2rem;
             top: 72rem;
             left: 2rem;
+        }
+        @media (max-width: 767px) {
+            width: 12.5rem;
+            height: 12.5rem;
+            top: 40rem;
+            left: -2rem;
         }
     }
 
@@ -399,6 +539,12 @@
             top: 60rem;
             left: -5rem;
         }
+        @media (max-width: 767px) {
+            width: 15.6rem;
+            height: 15.6rem;
+            top: 33rem;
+            left: -7rem;
+        }
     }
 
     #Rect7 {
@@ -410,6 +556,12 @@
             height: 20.2rem;
             top: 50rem;
             left: 6rem;
+        }
+        @media (max-width: 767px) {
+            width: 10.4rem;
+            height: 10.4rem;
+            top: 30rem;
+            left: -2rem;
         }
     }
 
@@ -423,6 +575,12 @@
             top: 68rem;
             left: 20rem;
         }
+        @media (max-width: 767px) {
+            width: 14rem;
+            height: 14rem;
+            top: 38rem;
+            left: 8rem;
+        }
     }
 
     #Rect9 {
@@ -434,6 +592,12 @@
             height: 18.2rem;
             top: 50rem;
             left: 40rem;
+        }
+        @media (max-width: 767px) {
+            width: 9.4rem;
+            height: 9.4rem;
+            top: 30rem;
+            left: 18rem;
         }
     }
 
@@ -447,6 +611,11 @@
             height: 31.1rem;
             margin-top: 8rem;
             z-index: -1;
+        }
+        @media (max-width: 767px) {
+            width: 15.9rem;
+            height: 21rem;
+            margin-top: 3rem;
         }
     }
 }
@@ -464,5 +633,9 @@
         content: '';
         left: 50%;
         translate: -50% -50%;
+    }
+    @media (max-width: 767px) {
+        margin-top: 5rem;
+        margin-bottom: 5rem;
     }
 }
