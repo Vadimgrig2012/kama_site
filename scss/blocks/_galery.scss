@@ -1,0 +1,45 @@
+.galery {
+    display: flex;
+    flex-direction: column;
+    // overflow: auto;
+
+    &__photos {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap; 
+    }
+
+    &__photo {
+    }
+
+
+    &__container {
+    }
+
+    &__bg {
+    }
+
+    &__img {
+        border-radius: 3rem;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+}
+
+.title {
+
+    &__span {
+    }
+
+    &__span-galery {
+    }
+}
+
+.title-galery {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 18rem;
+    margin-bottom: 32rem;
+}
