@@ -4,10 +4,12 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const gallery = document.querySelector('.galery__photos');
+const galleryHeight = gallery.scrollWidth;
+gallery.style.height = `${galleryHeight}px`;
 
 
 function getToScrollAmount() {
-    let galleryWidth = gallery.scrollWidth;
+    let galleryWidth = gallery.scrollWidth  + (0.5 * window.innerWidth);
     return -(galleryWidth - window.innerWidth)
 }
 
@@ -19,7 +21,7 @@ const tween = gsap.to(gallery, {
 
 ScrollTrigger.create({
     trigger: '.galery__container',
-    start: 'top 20%',
+    start: 'top 10%',
     end: () => `+=${getToScrollAmount() * -1}`,
     pin: true,
     animation: tween,
