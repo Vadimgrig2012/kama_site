@@ -4,8 +4,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const gallery = document.querySelector('.galery__photos');
-const galleryHeight = gallery.scrollWidth + (0.5 * window.innerWidth);
-gallery.style.height = `${galleryHeight / 10}rem`;
 
 
 function getToScrollAmount() {
@@ -24,6 +22,7 @@ ScrollTrigger.create({
     start: 'top 10%',
     end: () => `+=${getToScrollAmount() * -1}`,
     pin: true,
+    pinSpacing: true,
     animation: tween,
     scrub: 1,
     invalidateOnRefresh: true,
