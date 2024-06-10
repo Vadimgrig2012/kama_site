@@ -5,7 +5,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const gallery = document.querySelector('.galery__photos');
 const galleryHeight = gallery.scrollWidth;
-gallery.style.height = `${galleryHeight}px`;
+gallery.style.height = `${galleryHeight / 10}rem`;
 
 
 function getToScrollAmount() {
