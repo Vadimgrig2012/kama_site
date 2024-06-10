@@ -118,34 +118,39 @@
 
 
 
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-// Регистрируем плагины
-gsap.registerPlugin(ScrollTrigger);
 
 
-const path = document.querySelector("#vector-svg-path");
-const theFill = document.querySelector("#theFill");
-const pathLength = path.getTotalLength();
+// Анимация отрисовки линии
 
-let mm = gsap.matchMedia();
-mm.add("(min-width: 1025px)", () => {
-    gsap.set(theFill, {
-        strokeDasharray: pathLength,
-        strokeDashoffset: pathLength
-    });
 
-    ScrollTrigger.create({
-        trigger: ".background__vector-svg",
-        animation: gsap.to(theFill, {
-            strokeDashoffset: 0,
-            ease: 'none',
-            delay: 0
-        }),
-        start: "top 50%",
-        end: "100% 50%",
-        scrub: 1,
-        // markers: true
-    });
-})
+// import { gsap } from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// // Регистрируем плагины
+// gsap.registerPlugin(ScrollTrigger);
+
+
+// const path = document.querySelector("#vector-svg-path");
+// const theFill = document.querySelector("#theFill");
+// const pathLength = path.getTotalLength();
+
+// let mm = gsap.matchMedia();
+// mm.add("(min-width: 1025px)", () => {
+//     gsap.set(theFill, {
+//         strokeDasharray: pathLength,
+//         strokeDashoffset: pathLength
+//     });
+
+//     ScrollTrigger.create({
+//         trigger: ".background__vector-svg",
+//         animation: gsap.to(theFill, {
+//             strokeDashoffset: 0,
+//             ease: 'none',
+//             delay: 0
+//         }),
+//         start: "top 50%",
+//         end: "100% 50%",
+//         scrub: 1,
+//         // markers: true
+//     });
+// })

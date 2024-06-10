@@ -11,20 +11,32 @@ function getToScrollAmount() {
     return -(galleryWidth - window.innerWidth)
 }
 
-const tween = gsap.to(gallery, {
+let tween = gsap.to(gallery, {
     x: getToScrollAmount,
-    duration: 3,
+    duration: 5,
     ease: 'none',
+    scrollTrigger: {
+        trigger: '.galery__container',
+        start: 'top 10%',
+        end: () => `+=${getToScrollAmount() * -1}`,
+        pin: true,
+        pinSpacing: true,
+        scrub: 1,
+        invalidateOnRefresh: true,
+        // markers: true,
+    }
 })
 
-ScrollTrigger.create({
-    trigger: '.galery__container',
-    start: 'top 10%',
-    end: () => `+=${getToScrollAmount() * -1}`,
-    pin: true,
-    pinSpacing: true,
-    animation: tween,
-    scrub: 1,
-    invalidateOnRefresh: true,
-    markers: true,
+
+gsap.to('.galery__bg', {
+    x: '50%',
+    duration: 5,
+    scrollTrigger:{
+        containerAnimation: tween,
+        trigger: gallery,
+        start: 'left 100%',
+        scrub: 1,
+        // markers: true
+    }
 })
+
