@@ -47,16 +47,17 @@ gsap.to('.galery__bg', {
 mm.add("(min-width: 1025px)", () => {
     photosArray.forEach((photo) =>{
         gsap.from(photo, {
-            y: '-20rem',
+            y: '-10rem',
+            x: '10rem',
             duration: 0.5,
             opacity: 0,
-            ease: 'elastic.inOut(1.5,0.75)',
+            ease: 'elastic.inOut(1.5,1)',
             scrollTrigger:{
                 containerAnimation: tween,
                 trigger: photo,
                 start: 'left 80%',
                 end: 'right 80%',
-                toggleActions: 'play none reverse none',
+                toggleActions: 'play none reverse reverse',
                 // markers: true
             }
         });
