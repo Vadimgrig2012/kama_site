@@ -2,7 +2,7 @@ import { gsap } from "gsap";
 
 
 
-let mm = gsap.matchMedia();
+const mm = gsap.matchMedia();
 mm.add("(min-width: 1025px)", () => {
 
     const button = document.querySelector('.interactive-block__btn');
