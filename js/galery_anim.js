@@ -3,6 +3,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const photos = document.querySelectorAll('.galery__img');
+const photosArray = gsap.utils.toArray(photos);
 const gallery = document.querySelector('.galery__photos');
 
 
@@ -40,3 +42,21 @@ gsap.to('.galery__bg', {
     }
 })
 
+
+
+photosArray.forEach((photo) =>{
+    gsap.from(photo, {
+        y: '-10rem',
+        duration: 0.5,
+        opacity: 0,
+        ease: 'elastic.inOut(1.5,0.75)',
+        scrollTrigger:{
+            containerAnimation: tween,
+            trigger: photo,
+            start: 'left 80%',
+            end: 'right 80%',
+            toggleActions: 'play none reverse none',
+            // markers: true
+        }
+    })
+})
