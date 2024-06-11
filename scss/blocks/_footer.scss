@@ -1,0 +1,81 @@
+.footer {
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        margin: 36rem 2rem 0 2rem;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+    }
+
+    &__title {
+        font-family: 'Montserrat Alternates';
+        font-weight: 400;
+        font-style: normal;
+        text-align: left;
+        line-height: 1.4;
+        font-size: 4rem;
+        color: var(--color-title);
+        cursor: default;
+    }
+
+    &_nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+        height: 15rem;
+    }
+
+    &__link {
+        font-family: 'Montserrat Alternates';
+        font-weight: 400;
+        font-style: normal;
+        line-height: 1.4;
+        font-size: 3rem;
+        color: var(--color-title);
+        cursor: default;
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0.5rem;
+            width: 100%;
+            left: 50%;
+            translate: -50% -50%;
+            height: 0.1rem;
+            background-color: var(--color-title);
+        }
+    }
+
+    &__social:nth-child(1){
+        margin-right: 2.5rem;
+    }
+
+    &__map iframe{
+        border-radius: 3rem;
+    }
+
+    &__signature{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__signature-link {
+        font-family: 'Montserrat Alternates';
+        font-weight: 400;
+        font-style: normal;
+        line-height: 1.4;
+        font-size: 1.6rem;
+        color: var(--color-title);
+        cursor: default;
+        text-decoration: none;
+        padding: 1rem 0;
+    }
+}
