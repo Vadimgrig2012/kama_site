@@ -26,6 +26,14 @@
         
     }
 
+    &__tooltip{
+        @include abs-center;
+        z-index: 2;
+        pointer-events: none;
+        opacity: 0;
+        display: none;
+    }
+
     &__remove-watermark {
         position: absolute;
         width: 160px;
