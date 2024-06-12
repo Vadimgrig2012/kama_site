@@ -10,13 +10,13 @@ const tl = gsap.timeline({
     scrollTrigger: {
         trigger: scene,
         start: '30% center',
-        markers:true
+        // markers:true
     }
 });
 
 tl.to(tooltip, {
     display: 'block',
-    opacity: 1,
+    opacity: 0.7,
 },0)
 .to(tooltip, {
     x: '150%',
