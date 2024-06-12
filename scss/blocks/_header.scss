@@ -48,7 +48,9 @@
         font-weight: 400;
         line-height: 1.2;
         margin: 7rem 0 0 15rem;
-        cursor: default;
+        @media (min-width: 1025px) {
+            cursor: none;
+        }
         @media (max-width: 1024px) {
             text-align: center;
             font-size: 7rem;
@@ -186,7 +188,9 @@
         position: relative;
         z-index: 1;
         overflow: hidden;
-
+        @media (min-width: 1025px) {
+            cursor: none;
+        }
         &:hover {
             color: var(--color-main-bg);
             transform: translateY(0.2rem);
@@ -273,7 +277,9 @@
     
     &__icon {
         width: 7.5rem;
-        cursor: default;
+        @media (min-width: 1025px) {
+            cursor: none;
+        }
     }
     @media (max-width: 1024px) {
         margin-left: 4rem;
@@ -388,7 +394,9 @@
         opacity: 0;
         width: 0;
         scale: 0;
-        cursor: default;
+        @media (min-width: 1025px) {
+            cursor: none;
+        }
         @media (max-width: 1024px) {
             display: none;
         }

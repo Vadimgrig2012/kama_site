@@ -65,7 +65,9 @@
     color: var(--color-title);
     margin-top: 11.3rem;
     position: relative;
-    cursor: default;
+    @media (min-width: 1025px) {
+        cursor: none;
+    }
     @media (max-width: 1024px) {
         margin-top: 10.8rem;
         font-size: 5rem;
