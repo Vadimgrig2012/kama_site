@@ -1,9 +1,3 @@
-
-
-
-
-
-
 // import { gsap } from "gsap";
 // import { ScrollTrigger } from "gsap/ScrollTrigger";
 // import { ScrollToPlugin } from "gsap/ScrollToPlugin";
@@ -83,37 +77,6 @@
 
 
 
-
-
-// import { gsap } from "gsap";
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-// // Регистрируем плагины
-// gsap.registerPlugin(ScrollTrigger);
-
-// ScrollTrigger.create({
-//     trigger: ".background__vector-svg",
-//     animation: drawLine(ScrollTrigger),
-//     start: "top top",
-//     end: "100% 100%",
-//     scrub: 4,
-//     markers: true
-// });
-
-
-// function drawLine (self) {
-//     window.addEventListener('scroll', function() {
-//         let l = Path_440.getTotalLength();
-//         let dasharray = l;
-//         let dashoffset = l;
-//         let e = document.documentElement;
-//         theFill.setAttributeNS(null, "stroke-dasharray", l);
-//         theFill.setAttributeNS(null, "stroke-dashoffset", l);
-//         dashoffset = l - window.scrollY * l / (e.scrollHeight - e.clientHeight);
-//       //   console.log('window.scrollY', window.scrollY, 'scrollTop', e.scrollTop, 'scrollHeight', e.scrollHeight, 'clientHeight', e.clientHeight, 'dash-offset', dashoffset);
-//         theFill.setAttributeNS(null, "stroke-dashoffset", dashoffset);
-//     })
-// }
 
 
 

@@ -55,8 +55,8 @@ mm.add("(min-width: 1025px)", () => {
             scrollTrigger:{
                 containerAnimation: tween,
                 trigger: photo,
-                start: 'left 80%',
-                end: 'right 80%',
+                start: 'center 80%',
+                end: 'center 80%',
                 toggleActions: 'play none reverse reverse',
                 // markers: true
             }
