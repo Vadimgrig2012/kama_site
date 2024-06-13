@@ -34,10 +34,16 @@ mm.add("(min-width: 1025px)", () => {
         });
         link.addEventListener('mousemove', () => {
             if(link.classList.contains('cur-h1')){
+                cursor.classList.remove('grow-h2');
+                cursor.classList.remove('grow-link');
                 cursor.classList.add('grow-h1');
             }else if(link.classList.contains('cur-link')){
+                cursor.classList.remove('grow-h1');
+                cursor.classList.remove('grow-h2');
                 cursor.classList.add('grow-link');
             }else if(link.classList.contains('cur-h2')){
+                cursor.classList.remove('grow-link');
+                cursor.classList.remove('grow-h1');
                 cursor.classList.add('grow-h2');
             };
         });
