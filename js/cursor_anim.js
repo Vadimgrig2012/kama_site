@@ -7,6 +7,7 @@ let mouseX = 0;
 let mouseY = 0;
 
 mm.add("(min-width: 1025px)", () => {
+    
     gsap.to({}, {
         duration: 0.010,
         repeat: -1, 
@@ -24,7 +25,13 @@ mm.add("(min-width: 1025px)", () => {
     window.addEventListener("mousemove", function (e){
         mouseX = e.clientX;
         mouseY = e.clientY;
-    })
+
+        if (!isCursorWithinViewport()) {
+            cursor.style.opacity= 0;
+        } else {
+            cursor.style.opacity = 0.7;
+        }
+    });
 
     cursorScale.forEach(link => {
         link.addEventListener('mouseleave', () => {
@@ -48,4 +55,16 @@ mm.add("(min-width: 1025px)", () => {
             };
         });
     });
-})
+
+
+    function isCursorWithinViewport() {
+        const viewportWidth = document.body.offsetWidth;
+        const viewportHeight = document.body.offsetHeight;
+        const cursorLeft = mouseX;
+        const cursorTop = mouseY;
+    
+        return cursorLeft >= 10 && cursorLeft <= viewportWidth && cursorTop >= 10 && cursorTop <= viewportHeight;
+    }
+});
+
+
