@@ -59,6 +59,8 @@
         height: 72rem;
         border-radius: 30px;
         background: linear-gradient(225.00deg, rgb(255, 249, 126),rgb(252, 164, 197) 100%);
+        box-shadow: 0 .4rem 3rem rgba(0, 0, 0, 0.1);
+        border: .1rem solid rgba(253, 205, 166, 0.384);
         @media (max-width: 1024px) {
             margin-right: 0;
             margin-left: 0;
@@ -81,6 +83,8 @@
         height: 72rem;
         border-radius: 30px;
         background: linear-gradient(43.73deg, rgb(108, 231, 221) 33.127%,rgb(37, 214, 151) 78.056%);
+        box-shadow: 0 .4rem 3rem rgba(0, 0, 0, 0.1);
+        border: .1rem solid rgba(205, 255, 243, 0.384);
         @media (max-width: 1024px) {
             margin-right: 0;
             margin-left: 0;
@@ -145,6 +149,8 @@
         justify-content: center;
         margin-top: 5.7rem;
         background-color: var(--color-card-text);
+        box-shadow: 0 .4rem 3rem rgba(0, 0, 0, 0.1);
+        border: .1rem solid rgba(253, 209, 246, 0.41);
         border-radius: 50%;
         width: 10.8rem;
         height: 10.8rem;
@@ -212,6 +218,8 @@
         position: absolute;
         backdrop-filter: blur(0.12rem);
         background: linear-gradient(144.67deg, rgba(176, 143, 182, 0.28) -4.571%,rgba(153, 153, 153, 0) 134.069%);
+        box-shadow: 0 .4rem 3rem rgba(0, 0, 0, 0.1);
+        border: .1rem solid rgba(207, 219, 240, 0.41);
         @media (max-width: 1024px) {
             backdrop-filter: blur(0.08rem);
         }

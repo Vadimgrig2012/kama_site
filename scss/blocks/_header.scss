@@ -183,6 +183,8 @@
         font-family: 'Montserrat Alternates';
         font-size: 3rem;
         color: var(--color-accent-yellow);
+        box-shadow: 0 .4rem 3rem rgba(0, 0, 0, 0.1);
+        border: .1rem solid rgba(207, 219, 240, 0.41);
         padding: 1rem 8.4rem;
         transition: 0.4s linear;
         position: relative;
@@ -348,6 +350,8 @@
         border-radius: 50%;
         background-color: var(--color-main-bg);
         background: linear-gradient(126.87deg, rgb(136, 169, 192) 16.497%,rgb(78, 130, 166) 84.24%);
+        box-shadow: 0 .4rem 3rem rgba(0, 0, 0, 0.1);
+        border: .1rem solid rgba(207, 219, 240, 0.41);
         position: relative;
         z-index: 2;
 

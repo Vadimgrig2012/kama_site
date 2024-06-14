@@ -78,7 +78,7 @@ repeatDelay: 0.5,
     ease: 'sine.inOut',
     yoyo: true,
     repeat: 1,
-    repeatDelay: 6,
+    repeatDelay: 6
 }, 0);
 
 

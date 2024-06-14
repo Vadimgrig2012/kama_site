@@ -1,0 +1,29 @@
+.popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95vw;
+    height: 95vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: 999;
+
+    background: rgba(63, 49, 185, 0.26);
+    border-radius: 3rem;
+    box-shadow: 0 .4rem 3rem rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(.7rem);
+    border: .1rem solid rgba(146, 178, 236, 0.41);
+
+    display: none;
+    &__card {
+    }
+
+    &__icon {
+    }
+}
+.whatsap {
+}
+.phone {
+}
