@@ -10,19 +10,57 @@
 
     <body>
 
-        <div class="main-wrapper">
-            
-            <div class="cursor"></div>
-
-            <div class="popup">
-                <div class="popup__card">
-                    <div class="popup__icon">
-                        <div class="whatsap">Whatsap</div>
-                        <div class="phone">Phone</div>
-                    </div>
+        <div class="modal">
+            <div class="modal__card">
+                <div class="modal__close cursor-scale cur-link">
+                    <svg class="icon-close" width="5.4rem" height="5.4rem" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <defs>
+                            <clipPath id="clip254_44">
+                                <rect id="square_close_cross_icon_128691" width="54.000000" height="54.000000" fill="white" fill-opacity="0"/>
+                            </clipPath>
+                        </defs>
+                        <g clip-path="url(#clip254_44)">
+                            <path id="line" d="M8.96 10.06L8.93 10.06C8.34 9.46 8.34 8.53 8.93 7.93C9.53 7.34 10.46 7.34 11.06 7.93L11.06 7.96L8.96 10.06ZM46.38 43.29L46.41 43.29C47 43.88 47 44.82 46.41 45.41C45.82 46.01 44.88 46.01 44.29 45.41L44.29 45.38L46.38 43.29Z" fill="#000000" fill-opacity="0" fill-rule="nonzero"/>
+                            <path id="line" d="M10 9L45.35 44.35" stroke="#FFFFFF" stroke-opacity="1.000000" stroke-width="3.000000" stroke-linejoin="round" stroke-linecap="round"/>
+                            <path id="line" d="M43.93 7.96L43.93 7.93C44.53 7.34 45.46 7.34 46.06 7.93C46.65 8.53 46.65 9.46 46.06 10.06L46.03 10.06L43.93 7.96ZM10.7 45.38L10.7 45.41C10.11 46.01 9.17 46.01 8.58 45.41C7.99 44.82 7.99 43.88 8.58 43.29L8.61 43.29L10.7 45.38Z" fill="#000000" fill-opacity="0" fill-rule="nonzero"/>
+                            <path id="line" d="M45 9L9.64 44.35" stroke="#FFFFFF" stroke-opacity="1.000000" stroke-width="3.000000" stroke-linejoin="round" stroke-linecap="round"/>
+                        </g>
+                    </svg>                        
+                </div>
+                <div class="modal__links">
+                    <a href="#" class="modal__wa cursor-scale cur-link">
+                        <svg class="wa-icon" width="14rem" height="14rem" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <defs>
+                                <clipPath id="clip254_15">
+                                    <rect id="whatsapp-icon" width="140.000000" height="140.000000" fill="white" fill-opacity="0"/>
+                                </clipPath>
+                            </defs>
+                            <g clip-path="url(#clip254_15)">
+                                <path id="path" d="M115.88 23.86C62.07 -28.39 -22.34 36.25 14.23 101.77C14.23 101.77 5.07 135.22 5.07 135.22L39.3 126.24C104.81 160.88 167.51 76.95 115.88 23.86Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="evenodd"/>
+                                <path id="path" d="M70.2 124.24C59.57 124.28 49.23 121.08 40.32 115.43L19.6 120.86L25.13 100.67C18.92 91.46 15.42 80.66 15.47 69.48C15.37 21.11 74.86 -3.55 108.91 30.82C143.23 64.9 118.58 124.34 70.2 124.24Z" fill="#24AF1F" fill-opacity="1.000000" fill-rule="evenodd"/>
+                                <path id="path" d="M100.21 83.26C98.57 82.44 90.48 78.46 88.97 77.91C87.46 77.36 86.37 77.09 85.27 78.73C84.17 80.38 81.02 84.08 80.06 85.18C79.1 86.28 78.14 86.42 76.5 85.59C72.94 86.07 54.71 70.65 54.11 66.04C53.16 64.39 54.01 63.5 54.84 62.68C56.27 61.11 58.08 59.13 58.95 57.05C59.5 55.95 59.22 54.99 58.81 54.17C58.4 53.35 55.2 45.21 53.74 41.96C52.51 39.22 51.21 39.16 50.04 39.12C47.26 39.16 45.11 38.44 42.5 41.14C32.69 50.57 37.19 63.84 43.46 71.87C44.28 72.97 54.84 90.11 71.56 96.71C85.46 102.19 88.29 101.1 91.3 100.82C94.32 100.55 101.04 96.84 102.41 93C103.78 89.16 103.78 85.87 103.37 85.18C102.96 84.5 101.86 84.08 100.21 83.26Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="evenodd"/>
+                            </g>
+                        </svg> 
+                    </a>
+                    <a href="#" class="modal__tel cursor-scale cur-link">
+                        <svg class="tel-icon" width="13.4rem" height="13.1rem" viewBox="0 0 134 131" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <defs>
+                                <clipPath id="clip254_37">
+                                    <rect id="phone-icon" width="134.000000" height="131.000000" fill="white" fill-opacity="0"/>
+                                </clipPath>
+                            </defs>
+                            <g clip-path="url(#clip254_37)">
+                                <rect id="rect" x="0.280518" y="-0.093262" rx="16.459999" width="133.794128" height="131.045029" transform="rotate(0.159843 0.280518 -0.093262)" fill="#FFFFFF" fill-opacity="1.000000"/>
+                                <path id="path" d="M109.34 88.74C109.09 88.01 107.56 86.94 104.74 85.54C103.99 85.1 102.87 84.5 101.48 83.67L97.74 81.56C96.6 80.91 95.51 80.29 94.52 79.69L93 78.63C92.32 78.14 91.6 77.71 90.85 77.34C90.31 77.06 89.74 76.92 89.13 76.91C87.91 77.11 86.91 77.69 86.12 78.63C84.9 79.78 83.8 81.02 82.8 82.37C81.82 83.68 80.75 84.93 79.6 86.11C78.88 87.07 77.92 87.66 76.74 87.88C76.26 87.85 75.81 87.75 75.37 87.56C74.95 87.43 74.54 87.26 74.14 87.06L72.69 86.22L71.53 85.53C66.32 82.68 61.59 79.18 57.35 75.02C53.17 70.79 49.65 66.07 46.79 60.86C46.79 60.86 46.53 60.39 46.1 59.7C45.67 59.01 45.4 58.54 45.25 58.26C45.06 57.86 44.89 57.45 44.75 57.03C44.56 56.59 44.46 56.14 44.43 55.66C44.65 54.52 45.23 53.6 46.15 52.9C47.32 51.74 48.57 50.67 49.9 49.7C51.24 48.69 52.48 47.58 53.64 46.37C54.58 45.58 55.16 44.57 55.36 43.36C55.35 42.75 55.21 42.18 54.93 41.64C54.56 40.89 54.13 40.17 53.64 39.49L52.57 37.97C51.97 36.98 51.36 35.9 50.7 34.76L48.66 30.92C47.89 29.52 47.29 28.42 46.79 27.67C45.39 24.84 44.32 23.31 43.59 23.07C43.18 22.94 42.76 22.88 42.33 22.9C40.89 22.94 39.47 23.14 38.07 23.5C36.65 23.79 35.27 24.21 33.93 24.77C31.91 25.61 29.77 28.06 27.53 32.12C25.54 35.6 24.51 39.34 24.44 43.34C24.44 44.4 24.51 45.45 24.65 46.5C24.82 47.68 25.08 48.84 25.41 49.98C25.77 51.27 26.07 52.22 26.29 52.84C26.52 53.46 26.91 54.58 27.53 56.19C28.15 57.79 28.48 58.79 28.61 59.14C29.92 62.85 31.61 66.38 33.69 69.72C37.44 75.55 41.8 80.88 46.79 85.69C51.61 90.68 56.94 95.04 62.77 98.78C66.12 100.84 69.64 102.51 73.35 103.8L76.18 104.71L79.53 105.96C80.14 106.17 81.1 106.47 82.39 106.82C83.53 107.16 84.69 107.42 85.87 107.59C86.92 107.73 87.98 107.8 89.04 107.8C93.04 107.73 96.79 106.7 100.27 104.71C104.33 102.47 106.79 100.34 107.62 98.32C108.18 96.98 108.61 95.6 108.9 94.18C109.25 92.79 109.45 91.38 109.49 89.94C109.51 89.53 109.46 89.13 109.34 88.74Z" fill="#24AF1F" fill-opacity="1.000000" fill-rule="nonzero"/>
+                            </g>
+                        </svg>                            
+                    </a>
                 </div>
             </div>
+        </div>
+        <div class="cursor"></div>
 
+        <div class="main-wrapper">
             <div class="background">
 
                 <!-- <svg class="background__vector-svg" width="122.8rem" height="283.7rem" viewBox="0 0 1228.06 2837.06" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -118,7 +156,6 @@
                 <div class="background__circle background__circle-yellow-small"></div>
                 <div class="background__circle background__circle-cyan-light-big-copy"></div>
             </div>
-
             <header class="header">
                 <div class="header__background-img">
                     <svg class="main-svg" width="139.6rem" height="101rem" viewBox="0 0 1396 1010" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -631,7 +668,6 @@
                     <a class="footer__signature-link cursor-scale cur-link" href="#">Made by Vadim Snopov</a>
                 </div>
             </footer>
-
         </div>
 
         <script type="module" src="https://unpkg.com/@splinetool/viewer@1.5.5/build/spline-viewer.js"></script>
