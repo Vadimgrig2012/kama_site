@@ -1,8 +1,8 @@
 import { gsap } from "gsap";
-let mm = gsap.matchMedia();
+const mm = gsap.matchMedia();
 
-let cursor = document.querySelector('.cursor');
-let cursorScale = document.querySelectorAll('.cursor-scale');
+const cursor = document.querySelector('.cursor');
+const cursorScale = document.querySelectorAll('.cursor-scale');
 let mouseX = 0;
 let mouseY = 0;
 
@@ -27,7 +27,7 @@ mm.add("(min-width: 1025px)", () => {
         mouseX = e.clientX;
         mouseY = e.clientY;
 
-        if (!isCursorWithinViewport()) {
+        if (!isCursorWithinViewport() || isCursorOverMap()) {
             cursor.style.opacity= 0;
         } else {
             cursor.style.opacity = 0.7;
@@ -65,7 +65,18 @@ mm.add("(min-width: 1025px)", () => {
         const cursorLeft = mouseX;
         const cursorTop = mouseY;
         return cursorLeft >= 10 && cursorLeft <= viewportWidth && cursorTop >= 10 && cursorTop <= viewportHeight;
-    }
+    };
+
+    function isCursorOverMap() {
+        const map = document.querySelector('.footer__map');
+        const mapRect = map.getBoundingClientRect();
+        return (
+            mouseX >= (mapRect.left - 10) &&
+            mouseX <= (mapRect.right + 10) &&
+            mouseY >= (mapRect.top - 10) &&
+            mouseY <= (mapRect.bottom + 10)
+        );
+    };
 });
 
 
