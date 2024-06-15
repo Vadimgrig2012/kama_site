@@ -22,7 +22,8 @@ mm.add("(min-width: 1025px)", () => {
         }
     });
 
-    window.addEventListener("mousemove", function (e){
+
+    window.addEventListener("mousemove", (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
 
@@ -32,6 +33,7 @@ mm.add("(min-width: 1025px)", () => {
             cursor.style.opacity = 0.7;
         }
     });
+
 
     cursorScale.forEach(link => {
         link.addEventListener('mouseleave', () => {
@@ -62,7 +64,6 @@ mm.add("(min-width: 1025px)", () => {
         const viewportHeight = document.body.offsetHeight;
         const cursorLeft = mouseX;
         const cursorTop = mouseY;
-    
         return cursorLeft >= 10 && cursorLeft <= viewportWidth && cursorTop >= 10 && cursorTop <= viewportHeight;
     }
 });
