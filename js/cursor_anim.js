@@ -27,8 +27,8 @@ mm.add("(min-width: 1025px)", () => {
         mouseX = e.clientX;
         mouseY = e.clientY;
 
-        if (!isCursorWithinViewport() || isCursorOverMap()) {
-            cursor.style.opacity= 0;
+        if (!isCursorWithinViewport()) {
+            cursor.style.opacity = 0;
         } else {
             cursor.style.opacity = 0.7;
         }
@@ -67,16 +67,16 @@ mm.add("(min-width: 1025px)", () => {
         return cursorLeft >= 10 && cursorLeft <= viewportWidth && cursorTop >= 10 && cursorTop <= viewportHeight;
     };
 
-    function isCursorOverMap() {
-        const map = document.querySelector('.footer__map');
-        const mapRect = map.getBoundingClientRect();
-        return (
-            mouseX >= (mapRect.left - 10) &&
-            mouseX <= (mapRect.right + 10) &&
-            mouseY >= (mapRect.top - 10) &&
-            mouseY <= (mapRect.bottom + 10)
-        );
-    };
+    // function isCursorOverMap() {
+    //     const map = document.querySelector('.footer__map');
+    //     const mapRect = map.getBoundingClientRect();
+    //     return (
+    //         mouseX >= (mapRect.left - 10) &&
+    //         mouseX <= (mapRect.right + 10) &&
+    //         mouseY >= (mapRect.top - 10) &&
+    //         mouseY <= (mapRect.bottom + 10)
+    //     );
+    // };
 });
 
 

@@ -1,6 +1,6 @@
 import { gsap } from "gsap";
 
-const open = document.querySelector('.interactive-block__btn');
+const open = document.querySelectorAll('.interactive-block__btn, .footer_nav li:nth-child(3)');
 const modal = document.querySelector('.modal');
 const card = document.querySelector('.modal__card');
 const close = document.querySelector('.modal__close');
@@ -40,14 +40,16 @@ function closedModal() {
 };
 
 
+open.forEach(element =>{
+    element.addEventListener('click', () => {
+        document.body.style.overflow = 'hidden';
+        if(!mobile.matches) {
+            document.body.style.paddingRight = '15px';
+        };
+        openModal();
+    });
+})
 
-open.addEventListener('click', () => {
-    document.body.style.overflow = 'hidden';
-    if(!mobile.matches) {
-        document.body.style.paddingRight = '15px';
-    };
-    openModal();
-});
 
 close.addEventListener('click', () => {
     closedModal();
