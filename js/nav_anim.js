@@ -1,33 +1,38 @@
 import { gsap } from "gsap";
 
-const open = document.querySelectorAll('.interactive-block__btn, .footer_nav li:nth-child(3)');
-const modal = document.querySelector('.modal');
-const card = document.querySelector('.modal__card');
-const close = document.querySelector('.modal__close');
-const icons = gsap.utils.toArray('.modal__links a');
+const open = document.querySelectorAll('.menu__button');
+const nav = document.querySelector('.nav');
+const links = gsap.utils.toArray('.nav__list li');
+const close = document.querySelector('.nav__close');
 const mobile = window.matchMedia("(max-width: 1024px)");
 const mm = gsap.matchMedia();
 const tl = gsap.timeline({ paused: true });
 
 
-tl.to(modal, {
+tl.to(nav, {
+    transformOrigin: 'top',
     display: 'flex',
+    scaleY: 0,
     duration: 0
 }, 0)
-.from(card, {
-    scale: 0,
+.to(nav, {
+    scaleY: 1,
+    duration: 0.3,
+    ease: "sine.inOut",
+}, 0.2)
+.from(close, {
+    x: '-5rem',
     opacity: 0,
-    y: '-50rem',
-    ease: "back.inOut(4)",
-    duration: 0.5
-})
-.from(icons, {
+    rotate: 360,
+    duration: 0.4
+}, 0.6)
+.from(links, {
     y: '10rem',
     scale: 0,
     opacity: 0,
     stagger: 0.2,
     ease: "back.inOut(4)",
-    duration: 0.2
+    duration: 0.5
 }, 0.5)
 
 
@@ -58,28 +63,27 @@ close.addEventListener('click', () => {
         if(!mobile.matches) {
             document.body.style.removeProperty('padding-right');
         }
-    }, 1000)
+    }, 1200)
 });
 
 
-
-icons.forEach(icon => {
+links.forEach(link => {
     mm.add("(min-width: 1025px)", () => {
-        icon.addEventListener('mouseenter', () => {
-            gsap.to(icon, {
-                rotate: 45,
-                duration: 0.3
+        link.addEventListener('mouseenter', () => {
+            gsap.to(link, {
+                x: '3rem',
+                duration: 0.2,
             })
         });
-        icon.addEventListener('mouseleave', () => {
-            gsap.to(icon, {
-                rotate: 0,
-                duration: 0.3
+        link.addEventListener('mouseleave', () => {
+            gsap.to(link, {
+                x: 0,
+                duration: 0.2,
             })
         });
     });
-    icon.addEventListener('click', () => {
-        gsap.to(icon, {
+    link.addEventListener('click', () => {
+        gsap.to(link, {
             y: '1rem',
             duration: 0.05,
             repeat: 1,
@@ -87,4 +91,3 @@ icons.forEach(icon => {
         })
     });
 })
-
