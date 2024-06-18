@@ -1,4 +1,7 @@
 import { gsap } from "gsap";
+import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+
+gsap.registerPlugin(MotionPathPlugin);
 
 const open = document.querySelector('.menu__button');
 const nav = document.querySelector('.nav');
@@ -20,6 +23,9 @@ tl.to(nav, {
     duration: 0.3,
     ease: "sine.inOut",
 }, 0.2)
+.to(nav, {
+    borderRadius: '0 0 0 0'
+}, 0.3)
 .from(close, {
     x: '-5rem',
     opacity: 0,
@@ -65,20 +71,52 @@ close.addEventListener('click', () => {
 });
 
 
+
+mm.add("(min-width: 1025px)", () => {
+    close.addEventListener('mouseenter', () => {
+        gsap.to(close, {
+            rotate: 180,
+            duration: 0.2,
+        })
+    });
+
+    close.addEventListener('mouseleave', () => {
+        gsap.to(close, {
+            rotate: 0,
+            duration: 0.2,
+        })
+    });
+});
+
+close.addEventListener('click', () => {
+    gsap.to(close, {
+        y: '1rem',
+        duration: 0.05,
+        repeat: 1,
+        yoyo: true
+    })
+});
+
+
+
 links.forEach(link => {
     mm.add("(min-width: 1025px)", () => {
         link.addEventListener('mouseenter', () => {
             gsap.to(link, {
+                '--translateX': 0,
+                '--opacity': 1,
+                '--scale': 1,
                 x: '3rem',
                 duration: 0.2,
-                boxShadow: '-3rem 0 0 0 #FFEF66'
             })
         });
         link.addEventListener('mouseleave', () => {
             gsap.to(link, {
+                '--translateX': '-10rem',
+                '--opacity': 0,
+                '--scale': 0,
                 x: 0,
                 duration: 0.2,
-                boxShadow: '0rem 0 0 0 #FFEF66'
             })
         });
     });
@@ -90,4 +128,4 @@ links.forEach(link => {
             yoyo: true
         })
     });
-})
+});
