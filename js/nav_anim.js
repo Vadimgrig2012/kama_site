@@ -1,6 +1,6 @@
 import { gsap } from "gsap";
 
-const open = document.querySelectorAll('.menu__button');
+const open = document.querySelector('.menu__button');
 const nav = document.querySelector('.nav');
 const links = gsap.utils.toArray('.nav__list li');
 const close = document.querySelector('.nav__close');
@@ -45,15 +45,13 @@ function closedModal() {
 };
 
 
-open.forEach(element =>{
-    element.addEventListener('click', () => {
-        document.body.style.overflow = 'hidden';
-        if(!mobile.matches) {
-            document.body.style.paddingRight = '15px';
-        };
-        openModal();
-    });
-})
+open.addEventListener('click', () => {
+    document.body.style.overflow = 'hidden';
+    if(!mobile.matches) {
+        document.body.style.paddingRight = '15px';
+    };
+    openModal();
+});
 
 
 close.addEventListener('click', () => {
@@ -73,12 +71,14 @@ links.forEach(link => {
             gsap.to(link, {
                 x: '3rem',
                 duration: 0.2,
+                boxShadow: '-3rem 0 0 0 #FFEF66'
             })
         });
         link.addEventListener('mouseleave', () => {
             gsap.to(link, {
                 x: 0,
                 duration: 0.2,
+                boxShadow: '0rem 0 0 0 #FFEF66'
             })
         });
     });

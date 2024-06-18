@@ -15,16 +15,16 @@
     }
 
     &__list {
-        text-align: center;
+        text-align: left;
     }
 
     &__link:nth-child(2) {
         margin: 5rem 0;
     }
 
-    // &__link {
-    //     border-radius: 10%;
-    // }
+    &__link {
+        padding-left: 2rem;
+    }
 
     &__link a {
         font-family: 'Montserrat Alternates';
