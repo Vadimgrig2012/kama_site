@@ -40,6 +40,16 @@ tl.to(nav, {
     ease: "back.inOut(4)",
     duration: 0.5
 }, 0.5)
+// .to('.plane', {
+//     duration: 8,
+//     // repeat: -1,
+//     motionPath: {
+//         path: '#vector-path',
+//         align: '#vector-path',
+//         alignOrigin: [0.5, 0.5],
+//         autoRotate: true
+//     }
+// }, 1)
 
 
 

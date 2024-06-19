@@ -9,15 +9,11 @@
     background-color: #867dda;
     border-radius: 0 0 50% 50%;
 
-    &__plane-path {
+    &__svg {
         position: absolute;
     }
 
-    &__plane {
-        position: absolute;
-        left: 35rem;
-        top: 15rem;
-    }
+    
 
     &__close {
         position: absolute;
