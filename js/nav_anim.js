@@ -6,6 +6,7 @@ gsap.registerPlugin(ScrollToPlugin)
 const open = document.querySelector('.menu__button');
 const nav = document.querySelector('.nav');
 const links = gsap.utils.toArray('.nav__list li');
+const footerLinks = gsap.utils.toArray('.footer_nav li').slice(0, 2);
 const close = document.querySelector('.nav__close');
 const mobile = window.matchMedia("(max-width: 1024px)");
 const mm = gsap.matchMedia();
@@ -144,4 +145,19 @@ links.forEach(link => {
             }
         });
     });
+});
+
+
+
+footerLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        const linkDataAttr = link.getAttribute('data-link');
+        gsap.to(window, {
+            delay: 0.2,
+            duration: 1.5,
+            scrollTo: {
+                y: '.' + linkDataAttr,
+            }
+        });
+    });    
 });

@@ -25,12 +25,14 @@ body {
 ::-webkit-scrollbar-track {
     background: #89adc7;
     box-shadow: 0 0 2px rgba(0, 0, 0, .2) inset;
+    cursor: default;
 }
 
 ::-webkit-scrollbar-thumb {
     background: #FF949A;
     border-radius: 8px;
     border: 3px solid #89adc7;
+    cursor: default;
 }
 
 ::-webkit-scrollbar-thumb:hover {

@@ -66,6 +66,7 @@
         font-size: 3rem;
         color: var(--color-title);
         position: relative;
+        transition: transform .2s linear;
         @media (min-width: 1025px) {
             cursor: none;
         }
@@ -91,6 +92,15 @@
         }
         @media (max-width: 767px) {
             font-size: 1.2rem;
+        }
+        &:hover {
+            transform: translateY(-1rem);
+            @media (max-width: 1024px) {
+                transform: translateY(0);
+            }
+        }
+        &:active {
+            transform: translateY(1rem);  
         }
     }
 
@@ -118,16 +128,36 @@
     }
 
     .tik-tok {
+        transition: transform .2s linear;
         @media (max-width: 767px) {
             width: 3.7rem;
             height: 3.7rem;
         }
+        &:hover {
+            transform: translateY(-1rem);
+            @media (max-width: 1024px) {
+                transform: translateY(0);
+            }
+        }
+        &:active {
+            transform: translateY(1rem);  
+        }
     }
 
     .like {
+        transition: transform .2s linear;
         @media (max-width: 767px) {
             width: 2.5rem;
             height: 4rem;
+        }
+        &:hover {
+            transform: translateY(-1rem);
+            @media (max-width: 1024px) {
+                transform: translateY(0);
+            }
+        }
+        &:active {
+            transform: translateY(1rem);  
         }
     }
 
