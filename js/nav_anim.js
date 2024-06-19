@@ -1,7 +1,7 @@
 import { gsap } from "gsap";
-import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
-gsap.registerPlugin(MotionPathPlugin);
+gsap.registerPlugin(ScrollToPlugin)
 
 const open = document.querySelector('.menu__button');
 const nav = document.querySelector('.nav');
@@ -120,11 +120,28 @@ links.forEach(link => {
         });
     });
     link.addEventListener('click', () => {
+        const linkDataAttr = link.getAttribute('data-link');
+        closedModal();
+        setTimeout(() => {
+            document.body.style.removeProperty('overflow');
+            if(!mobile.matches) {
+                document.body.style.removeProperty('padding-right');
+            }
+        }, 1200);
+
         gsap.to(link, {
             y: '1rem',
             duration: 0.05,
             repeat: 1,
             yoyo: true
-        })
+        });
+        
+        gsap.to(window, {
+            duration: 1,
+            delay: 1,
+            scrollTo: {
+                y: '.' + linkDataAttr,
+            }
+        });
     });
 });

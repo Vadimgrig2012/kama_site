@@ -8,6 +8,9 @@
     z-index: 999;
     background-color: #867dda;
     border-radius: 0 0 70% 70%;
+    @media (max-width: 1024px) {
+        border-radius: 0 0 50% 50%;
+    }
 
     &__close {
         position: absolute;
@@ -41,6 +44,16 @@
     }
 
     &__link {
+        font-family: 'Montserrat Alternates';
+        font-size: 5rem;
+        font-weight: 400;
+        color: var(--color-accent-yellow);
+        @media (max-width: 767px) {
+            font-size: 3rem;
+        }
+        @media (min-width: 1025px) {
+            cursor: none;
+        }
         &::before {
             position: absolute;
             left: -5rem;
@@ -55,20 +68,6 @@
             opacity: var(--opacity);
             scale: var(--scale);
             background-color: var(--color-accent-yellow);
-        }
-    }
-
-    &__link a {
-        font-family: 'Montserrat Alternates';
-        font-size: 5rem;
-        font-weight: 400;
-        color: var(--color-accent-yellow);
-        text-decoration: none;
-        @media (max-width: 767px) {
-            font-size: 3rem;
-        }
-        @media (min-width: 1025px) {
-            cursor: none;
         }
     }
 }
