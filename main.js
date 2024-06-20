@@ -16,10 +16,12 @@ import * as navAnim from './js/nav_anim'
 
 import { gsap } from "gsap";
 
-const h1Arr = gsap.utils.toArray('#h1Anim')
+const shapesArr = gsap.utils.toArray('.interactive-block__shapes svg');
+const bgCircleArr = gsap.utils.toArray('.header__bg-circle');
 const tl = gsap.timeline({
+    delay: 1,
     onComplete: () => {
-        gsap.delayedCall(1, () => {
+        gsap.delayedCall(0.2, () => {
             shapesAnimation();
             mainBtnAnimation();
             bgCircleAnimation();
@@ -34,20 +36,43 @@ const tl = gsap.timeline({
 tl.from('.header__background-img', {
     transformOrigin: 'left',
     scaleX:0,
-})
+    ease: "back.out(2)",
+    duration: 0.4
+}, 0)
 .from('.menu', {
     y: '-50rem',
-    opacity: 0
-})
-.from(h1Arr, {
+    opacity: 0,
+    ease: "back.out(2)",
+    duration: 0.4
+}, 0.4)
+.from('.header__title', {
+    scale: 0,
+    ease: "back.out(2)",
+    duration: 0.4
+}, 0.4)
+.from(shapesArr, {
+    y: '20rem',
     scale: 0,
     opacity: 0,
-    stagger: 0.2,
-})
+    duration: 0.5,
+    ease: "back.out(2)",
+    duration: 0.4,
+    stagger: 0.2
+}, 0.4)
 .from('.interactive-block__btn', {
     y: '20rem',
     scale: 0,
     opacity: 0,
     duration: 0.5,
-    ease: 'back.inOut(1.7)'
-})
+    ease: "back.out(2)",
+    duration: 0.4
+}, 0.4)
+.from(bgCircleArr, {
+    y: '20rem',
+    scale: 0,
+    opacity: 0,
+    duration: 0.5,
+    ease: "back.out(2)",
+    duration: 0.4,
+    stagger: 0.2
+}, 0.4)
