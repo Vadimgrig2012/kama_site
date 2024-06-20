@@ -16,63 +16,92 @@ import * as navAnim from './js/nav_anim'
 
 import { gsap } from "gsap";
 
+const matchMedia = window.matchMedia("(max-width: 1024px)");
+const matchMediaPhone = window.matchMedia("(max-width: 767px)");
 const shapesArr = gsap.utils.toArray('.interactive-block__shapes svg');
-const bgCircleArr = gsap.utils.toArray('.header__bg-circle');
+const headerCircleArr = gsap.utils.toArray('.header__bg-circle');
+const bgCircleArr = gsap.utils.toArray('.background__circle');
 const tl = gsap.timeline({
     delay: 1,
     onComplete: () => {
-        gsap.delayedCall(0.2, () => {
+        gsap.delayedCall(0.1, () => {
             shapesAnimation();
             mainBtnAnimation();
             bgCircleAnimation();
             h1Animation();
             ballCompositionAnimation();
+            document.body.style.removeProperty('overflow');
+            if(!matchMedia.matches) {
+                document.body.style.removeProperty('padding-right');
+            }
         })
     }
 });
 
 
+document.body.style.overflow = 'hidden';
+if(!matchMedia.matches) {
+    document.body.style.paddingRight = '15px';
+};
+
 
 tl.from('.header__background-img', {
-    transformOrigin: 'left',
-    scaleX:0,
+    transformOrigin: !matchMedia.matches ? 'left' : 'top',
+    scaleY: matchMedia.matches ? 0 : 1,
+    scaleX: !matchMedia.matches ? 0 : 1,
     ease: "back.out(2)",
     duration: 0.4
 }, 0)
+.from(!matchMedia.matches ? '.background__img-wrapper' : '.background__img-wrapper-adaptive', {
+    ease: "power1.out",
+    duration: 0.4,
+    opacity: 0
+}, 0)
 .from('.menu', {
-    y: '-50rem',
+    y: !matchMediaPhone ? '-50rem' : '-10rem',
     opacity: 0,
     ease: "back.out(2)",
     duration: 0.4
-}, 0.4)
+}, 0.6)
 .from('.header__title', {
     scale: 0,
     ease: "back.out(2)",
     duration: 0.4
-}, 0.4)
+}, 0.6)
 .from(shapesArr, {
     y: '20rem',
     scale: 0,
     opacity: 0,
-    duration: 0.5,
     ease: "back.out(2)",
     duration: 0.4,
     stagger: 0.2
-}, 0.4)
+}, 0.6)
 .from('.interactive-block__btn', {
-    y: '20rem',
+    y: !matchMediaPhone ? '20rem' : '10rem',
     scale: 0,
     opacity: 0,
-    duration: 0.5,
     ease: "back.out(2)",
     duration: 0.4
-}, 0.4)
-.from(bgCircleArr, {
+}, 0.6)
+.from(headerCircleArr, {
     y: '20rem',
     scale: 0,
     opacity: 0,
-    duration: 0.5,
     ease: "back.out(2)",
     duration: 0.4,
     stagger: 0.2
-}, 0.4)
+}, 0.6)
+.from(bgCircleArr, {
+    y: '10rem',
+    scale: 0,
+    opacity: 0,
+    ease: "back.out(2)",
+    duration: 0.1,
+    stagger: 0.05
+}, 0.6)
+.from('.background__ball-composition', {
+    scale: 0,
+    opacity: 0,
+    ease: "back.out(2)",
+    duration: 0.2,
+}, 0.8)

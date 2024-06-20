@@ -6,7 +6,7 @@ export function ballCompositionAnimation() {
 
     gsap.registerPlugin(ScrollTrigger,MotionPathPlugin);
 
-
+    const matchMedia = window.matchMedia("(max-width: 1024px)");
     const pathElement1 = document.getElementById("pathway1");
     const ballPurple = document.getElementById("ball-purple");
     const ballWhite = document.getElementById("ball-white");
@@ -14,6 +14,12 @@ export function ballCompositionAnimation() {
     const ballCyanSmall = document.getElementById("ball-cyan-small");
     const ballRedBig = document.getElementById("ball-red-big");
     const ballRedSmall = document.getElementById("ball-red-small");
+
+    gsap.to([ballPurple, ballWhite, ballWhite2, ballCyanSmall, ballRedBig, ballRedSmall], {
+        opacity:1,
+        scale: 1,
+        duration: 0.5
+    })
 
 
     gsap.to(ballPurple, {
@@ -28,8 +34,8 @@ export function ballCompositionAnimation() {
         },
         scrollTrigger: {
             trigger: '#ball-orange-main',
-            start: '-20% center',
-            end: '120% center',
+            start: !matchMedia.matches ? '-20% center' : '-20% 20%',
+            end: !matchMedia.matches ? '120% center' : '120% top',
             scrub: 5,
         }
     });
@@ -47,8 +53,8 @@ export function ballCompositionAnimation() {
         },
         scrollTrigger: {
             trigger: '#ball-orange-main',
-            start: '-20% center',
-            end: '120% center',
+            start: !matchMedia.matches ? '-20% center' : '-20% 20%',
+            end: !matchMedia.matches ? '120% center' : '120% top',
             scrub: 5,
         }
     });
@@ -65,8 +71,8 @@ export function ballCompositionAnimation() {
         },
         scrollTrigger: {
             trigger: '#ball-orange-main',
-            start: '-20% center',
-            end: '120% center',
+            start: !matchMedia.matches ? '-20% center' : '-20% 20%',
+            end: !matchMedia.matches ? '120% center' : '120% top',
             scrub: 5,
         }
     });
@@ -83,8 +89,8 @@ export function ballCompositionAnimation() {
         },
         scrollTrigger: {
             trigger: '#ball-orange-main',
-            start: '-20% center',
-            end: '120% center',
+            start: !matchMedia.matches ? '-20% center' : '-20% 20%',
+            end: !matchMedia.matches ? '120% center' : '120% top',
             scrub: 5,
         }
     });
@@ -101,8 +107,8 @@ export function ballCompositionAnimation() {
         },
         scrollTrigger: {
             trigger: '#ball-orange-main',
-            start: '-20% center',
-            end: '120% center',
+            start: !matchMedia.matches ? '-20% center' : '-20% 20%',
+            end: !matchMedia.matches ? '120% center' : '120% top',
             scrub: 10,
         }
     });
@@ -119,10 +125,9 @@ export function ballCompositionAnimation() {
         },
         scrollTrigger: {
             trigger: '#ball-orange-main',
-            start: '-20% center',
-            end: '120% center',
+            start: !matchMedia.matches ? '-20% center' : '-20% 20%',
+            end: !matchMedia.matches ? '120% center' : '120% top',
             scrub: 8,
         }
     });
 };
-

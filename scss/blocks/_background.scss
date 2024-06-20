@@ -60,6 +60,16 @@
         }
     }
 
+    #ball-white2,
+    #ball-white,
+    #ball-cyan-small,
+    #ball-purple,
+    #ball-red-small,
+    #ball-red-big {
+        opacity: 0;
+        scale: 0;
+    }
+
     &__circle {
         position: absolute;
         border-radius: 50%;
