@@ -24,17 +24,15 @@ const bgCircleArr = gsap.utils.toArray('.background__circle');
 const tl = gsap.timeline({
     delay: 1,
     onComplete: () => {
-        gsap.delayedCall(0.1, () => {
-            shapesAnimation();
-            mainBtnAnimation();
-            bgCircleAnimation();
-            h1Animation();
-            ballCompositionAnimation();
-            document.body.style.removeProperty('overflow');
-            if(!matchMedia.matches) {
-                document.body.style.removeProperty('padding-right');
-            }
-        })
+        gsap.delayedCall(0.1, shapesAnimation);
+        gsap.delayedCall(0.2, mainBtnAnimation);
+        gsap.delayedCall(0.3, bgCircleAnimation);
+        gsap.delayedCall(0.4, h1Animation);
+        gsap.delayedCall(0.5, ballCompositionAnimation);
+        document.body.style.removeProperty('overflow');
+        if (!matchMedia.matches) {
+            document.body.style.removeProperty('padding-right');
+        }
     }
 });
 
