@@ -37,10 +37,17 @@ const tl = gsap.timeline({
 });
 
 
+
 document.body.style.overflow = 'hidden';
 if(!matchMedia.matches) {
     document.body.style.paddingRight = '15px';
 };
+
+function refreshPage() {
+    window.scrollTo(0, 0);
+};
+window.addEventListener("beforeunload", refreshPage);
+
 
 
 tl.from('.header__background-img', {
