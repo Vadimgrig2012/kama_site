@@ -22,7 +22,7 @@ titles.forEach((title) => {
 	.from(title.querySelectorAll('.title__span'), { 
 	y: '-10rem',
 	opacity: 0, 
-	ease: "back.out(2)",
+	ease: "bounce.out",
 	delay: 0.1,
 	stagger: 0.1,
 	duration: 0.3,

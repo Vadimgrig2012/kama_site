@@ -1,0 +1,55 @@
+.preloader {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+
+    &__wrapper {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+    }
+
+    &__title {
+        font-family: 'Montserrat Alternates';
+        font-weight: 500;
+        font-style: normal;
+        font-size: 6rem;
+        color: var(--color-main-bg);
+        margin-top: 20rem;
+        z-index: 2001;
+        @media (max-width: 1024px) {
+            margin-top: 25rem;
+            text-align: center;
+            font-size: 5rem;
+        }
+        @media (max-width: 767px) {
+            margin-top: 15rem;
+            font-size: 2.2rem;
+        }
+    }
+
+    &__title span {
+        opacity: 0;
+    }
+
+    &__anim {
+        margin-top: 5rem;
+        z-index: 2001;
+        @media (max-width: 767px) {
+            margin-top: 2rem;
+            height: 32rem;
+            width: 32rem;
+        }
+    }
+
+    &__bg {
+        @include abs-center;
+        width: 230.8rem;
+        height: 230.8rem;
+        background-color: #FEF180;
+        border-radius: 50%;
+    }
+}

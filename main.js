@@ -14,6 +14,7 @@ import * as modalAnim from './js/modal_anim'
 import * as navAnim from './js/nav_anim'
 
 
+
 import { gsap } from "gsap";
 
 const matchMedia = window.matchMedia("(max-width: 1024px)");
@@ -22,7 +23,7 @@ const shapesArr = gsap.utils.toArray('.interactive-block__shapes svg');
 const headerCircleArr = gsap.utils.toArray('.header__bg-circle');
 const bgCircleArr = gsap.utils.toArray('.background__circle');
 const tl = gsap.timeline({
-    delay: 1,
+    delay: 4.2,
     onComplete: () => {
         gsap.delayedCall(0.1, shapesAnimation);
         gsap.delayedCall(0.2, mainBtnAnimation);
@@ -110,3 +111,95 @@ tl.from('.header__background-img', {
     ease: "back.out(2)",
     duration: 0.2,
 }, 0.8)
+
+
+
+function animationPreloader() {
+    const tl = gsap.timeline();
+    const dots = gsap.utils.toArray('.preloader__title span');
+    const leftCircle = document.querySelector('.preloader__anim-oval-l');
+    const rightCircle = document.querySelector('.preloader__anim-oval-r');
+
+    document.querySelector('.main-wrapper').style.display = 'block';
+
+    tl.to('.preloader', {
+        display: 'block'
+    }, 0)
+    tl.from('.preloader__title', {
+        y: '-20rem',
+        opacity: 0,
+        ease: "back.out(2)",
+        duration: 0.2,
+    }, .5)
+    .from('.preloader__anim', {
+        y: '20rem',
+        opacity: 0,
+        ease: "back.out(2)",
+        duration: 0.2,
+    }, .5)
+    .to(dots, {
+        opacity: 1,
+        stagger: 0.2,
+        repeat: -1
+    }, .6)
+    .to(leftCircle, {
+        y: '-50%',
+        duration: 0.4
+    }, 1)
+    .to(rightCircle, {
+        y: '50%',
+        duration: 0.4
+    }, 1)
+    .to(leftCircle, {
+        x: '100%',
+        duration: 0.4,
+        rotateZ: 180,
+        transformOrigin: "50% 50%",
+    }, 1.5)
+    .to(rightCircle, {
+        x: '-100%',
+        duration: 0.4,
+        rotateZ: 180,
+        transformOrigin: "50% 50%",
+    }, 1.5)
+    .to(leftCircle, {
+        y: 0,
+        duration: 0.4
+    }, 2)
+    .to(rightCircle, {
+        y: 0,
+        duration: 0.4
+    }, 2)
+    .to(leftCircle, {
+        x: '150%',
+        duration: 0.4,
+    }, 2.5)
+    .to(rightCircle, {
+        x: '-150%',
+        duration: 0.4,
+    }, 2.5)
+    .to(leftCircle, {
+        x: '250%',
+        duration: 0.4,
+        opacity: 0
+    }, 3)
+    .to(rightCircle, {
+        x: '-250%',
+        duration: 0.4,
+        opacity: 0
+    }, 3)
+    tl.to('.preloader__title', {
+        y: '-20rem',
+        opacity: 0,
+        ease: "back.out(2)",
+        duration: 0.4,
+    }, 3)
+    tl.to('.preloader__bg', {
+        scale: 0,
+        duration: 0.4,
+    }, 3.5)
+    .to('.preloader', {
+        display: 'none'
+    }, 4.1)
+}
+animationPreloader();
