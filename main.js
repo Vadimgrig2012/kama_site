@@ -120,7 +120,6 @@ function animationPreloader() {
     const leftCircle = document.querySelector('.preloader__anim-oval-l');
     const rightCircle = document.querySelector('.preloader__anim-oval-r');
 
-    document.querySelector('.main-wrapper').style.display = 'block';
 
     tl.to('.preloader', {
         display: 'block'
