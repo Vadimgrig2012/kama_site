@@ -46,6 +46,14 @@ body {
 .main-wrapper {
     overflow: hidden;
     position: relative;
+
+    &__start-bg {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background-color: #FEF180;
+        z-index: 1999;
+    }
 }
 
 

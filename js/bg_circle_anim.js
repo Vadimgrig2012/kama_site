@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 export function bgCircleAnimation() {
 	// Получаем все элементы с классом "background__circle"
 	const circles = document.querySelectorAll('.background__circle');
+	const circlesAdaptive = document.querySelectorAll('.background__circle-orange, .background__circle-blue, .background__circle-cyan-light-small, .background__circle-purple-transparent, .background__circle-red');
 	const transp_circle = document.querySelector('.header__bg-circle-transparent')
 	const mm = gsap.matchMedia();
 
@@ -22,8 +23,17 @@ export function bgCircleAnimation() {
 	}
 
 	// Применяем анимацию к каждому шару
-	circles.forEach(circle => {
-		animateCircle(circle);
+	mm.add("(min-width: 1025px)", () => {
+		circles.forEach(circle => {
+			animateCircle(circle);
+		});
+	});
+
+
+	mm.add("(max-width: 1024px)", () => {
+		circlesAdaptive.forEach(circle => {
+			animateCircle(circle);
+		});
 	});
 
 

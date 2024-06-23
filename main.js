@@ -115,6 +115,7 @@ tl.from('.header__background-img', {
 
 
 function animationPreloader() {
+    document.querySelector('.main-wrapper__start-bg').style.display = 'none';
     const tl = gsap.timeline();
     const dots = gsap.utils.toArray('.preloader__title span');
     const leftCircle = document.querySelector('.preloader__anim-oval-l');
@@ -139,7 +140,7 @@ function animationPreloader() {
     .to(dots, {
         opacity: 1,
         stagger: 0.2,
-        repeat: -1
+        repeat: 3
     }, .6)
     .to(leftCircle, {
         y: '-50%',
