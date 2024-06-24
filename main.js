@@ -63,7 +63,7 @@ tl.from('.header__background-img', {
     duration: 0.4,
     opacity: 0
 }, 0)
-.from('.menu', {
+.from(!matchMedia.matches ? '.menu' : '.logo', {
     y: !matchMediaPhone ? '-50rem' : '-10rem',
     opacity: 0,
     ease: "back.out(2)",
