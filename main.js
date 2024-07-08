@@ -203,4 +203,3 @@ function animationPreloader() {
     }, 4.1)
 }
 animationPreloader();
-// Тест
